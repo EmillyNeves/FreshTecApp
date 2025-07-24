@@ -69,7 +69,7 @@ export default function Settings() {
                 <h2 className="text-lg font-semibold text-neutral-800">Emily Rodriguez</h2>
                 <p className="text-neutral-600">emily@freshtec.com</p>
                 <Badge className="mt-1 bg-primary/10 text-primary hover:bg-primary/20">
-                  Premium Plan
+                  Plano Premium
                 </Badge>
               </div>
             </div>
@@ -81,7 +81,7 @@ export default function Settings() {
           <CardHeader>
             <CardTitle className="flex items-center text-lg">
               <Bell className="w-5 h-5 text-primary mr-3" />
-              Notification Settings
+              Configurações de Notificação
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
@@ -91,8 +91,8 @@ export default function Settings() {
                   <Sprout className="w-5 h-5 text-green-600" />
                 </div>
                 <div>
-                  <h4 className="font-medium text-neutral-800">Freshness Alerts</h4>
-                  <p className="text-sm text-neutral-600">Get notified about produce freshness</p>
+                  <h4 className="font-medium text-neutral-800">Alertas de Frescor</h4>
+                  <p className="text-sm text-neutral-600">Receba notificações sobre frescor dos produtos</p>
                 </div>
               </div>
               <Switch
@@ -107,8 +107,8 @@ export default function Settings() {
                   <Thermometer className="w-5 h-5 text-blue-600" />
                 </div>
                 <div>
-                  <h4 className="font-medium text-neutral-800">Temperature Monitoring</h4>
-                  <p className="text-sm text-neutral-600">Monitor storage temperature changes</p>
+                  <h4 className="font-medium text-neutral-800">Monitoramento de Temperatura</h4>
+                  <p className="text-sm text-neutral-600">Monitore mudanças na temperatura de armazenamento</p>
                 </div>
               </div>
               <Switch
@@ -123,8 +123,8 @@ export default function Settings() {
                   <Truck className="w-5 h-5 text-purple-600" />
                 </div>
                 <div>
-                  <h4 className="font-medium text-neutral-800">Delivery Updates</h4>
-                  <p className="text-sm text-neutral-600">Track delivery status and timing</p>
+                  <h4 className="font-medium text-neutral-800">Atualizações de Entrega</h4>
+                  <p className="text-sm text-neutral-600">Acompanhe status e horários de entregas</p>
                 </div>
               </div>
               <Switch
@@ -139,8 +139,8 @@ export default function Settings() {
                   <Megaphone className="w-5 h-5 text-amber-600" />
                 </div>
                 <div>
-                  <h4 className="font-medium text-neutral-800">Marketing Updates</h4>
-                  <p className="text-sm text-neutral-600">Receive promotional offers and tips</p>
+                  <h4 className="font-medium text-neutral-800">Atualizações de Marketing</h4>
+                  <p className="text-sm text-neutral-600">Receba ofertas promocionais e dicas</p>
                 </div>
               </div>
               <Switch
@@ -156,7 +156,7 @@ export default function Settings() {
           <CardHeader>
             <CardTitle className="flex items-center text-lg">
               <BarChart3 className="w-5 h-5 text-primary mr-3" />
-              Freshness Analytics
+              Análises de Frescor
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -183,17 +183,17 @@ export default function Settings() {
           <CardHeader>
             <CardTitle className="flex items-center text-lg">
               <Globe className="w-5 h-5 text-primary mr-3" />
-              App Settings
+              Configurações do App
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
             <button className="w-full flex items-center justify-between p-4 hover:bg-gray-50 rounded-lg transition-colors">
               <div className="flex items-center space-x-3">
                 <Globe className="w-5 h-5 text-neutral-600" />
-                <span className="font-medium text-neutral-800">Language</span>
+                <span className="font-medium text-neutral-800">Idioma</span>
               </div>
               <div className="flex items-center space-x-2">
-                <span className="text-neutral-600">English</span>
+                <span className="text-neutral-600">Português</span>
                 <ChevronRight className="w-4 h-4 text-neutral-400" />
               </div>
             </button>
@@ -201,10 +201,10 @@ export default function Settings() {
             <button className="w-full flex items-center justify-between p-4 hover:bg-gray-50 rounded-lg transition-colors">
               <div className="flex items-center space-x-3">
                 <Palette className="w-5 h-5 text-neutral-600" />
-                <span className="font-medium text-neutral-800">Theme</span>
+                <span className="font-medium text-neutral-800">Tema</span>
               </div>
               <div className="flex items-center space-x-2">
-                <span className="text-neutral-600">Light</span>
+                <span className="text-neutral-600">Claro</span>
                 <ChevronRight className="w-4 h-4 text-neutral-400" />
               </div>
             </button>
@@ -212,7 +212,7 @@ export default function Settings() {
             <button className="w-full flex items-center justify-between p-4 hover:bg-gray-50 rounded-lg transition-colors">
               <div className="flex items-center space-x-3">
                 <Database className="w-5 h-5 text-neutral-600" />
-                <span className="font-medium text-neutral-800">Data & Storage</span>
+                <span className="font-medium text-neutral-800">Dados e Armazenamento</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Badge variant="outline" className="bg-green-100 text-green-800 border-green-200">
@@ -225,7 +225,7 @@ export default function Settings() {
             <button className="w-full flex items-center justify-between p-4 hover:bg-gray-50 rounded-lg transition-colors">
               <div className="flex items-center space-x-3">
                 <Shield className="w-5 h-5 text-neutral-600" />
-                <span className="font-medium text-neutral-800">Privacy & Security</span>
+                <span className="font-medium text-neutral-800">Privacidade e Segurança</span>
               </div>
               <ChevronRight className="w-4 h-4 text-neutral-400" />
             </button>
@@ -236,12 +236,12 @@ export default function Settings() {
         <div className="space-y-3">
           <button className="w-full bg-primary text-white py-4 rounded-xl font-semibold hover:bg-primary/90 transition-colors flex items-center justify-center">
             <Download className="w-5 h-5 mr-2" />
-            Export Data
+            Exportar Dados
           </button>
           
           <button className="w-full bg-red-500 text-white py-4 rounded-xl font-semibold hover:bg-red-600 transition-colors flex items-center justify-center">
             <LogOut className="w-5 h-5 mr-2" />
-            Sign Out
+            Sair
           </button>
         </div>
       </div>

@@ -5,16 +5,16 @@ import { Thermometer, Droplets, Truck, AlertTriangle } from "lucide-react";
 
 export default function Home() {
   const alertsData = [
-    { id: 1, title: "Temperature Alert", message: "Refrigerator B temperature rising", type: "warning", icon: Thermometer },
-    { id: 2, title: "Humidity Low", message: "Storage room humidity below optimal", type: "info", icon: Droplets },
-    { id: 3, title: "Delivery Delayed", message: "Shipment #1234 delayed by 2 hours", type: "error", icon: Truck },
+    { id: 1, title: "Alerta de Temperatura", message: "Temperatura do Refrigerador B aumentando", type: "warning", icon: Thermometer },
+    { id: 2, title: "Umidade Baixa", message: "Umidade da sala de armazenamento abaixo do ideal", type: "info", icon: Droplets },
+    { id: 3, title: "Entrega Atrasada", message: "Envio #1234 atrasado em 2 horas", type: "error", icon: Truck },
   ];
 
   const statusData = [
-    { label: "Fresh Items", value: "847", status: "good", color: "bg-green-500" },
-    { label: "Near Expiry", value: "23", status: "warning", color: "bg-yellow-500" },
-    { label: "Expired", value: "3", status: "error", color: "bg-red-500" },
-    { label: "In Transit", value: "156", status: "info", color: "bg-blue-500" },
+    { label: "Itens Frescos", value: "847", status: "good", color: "bg-green-500" },
+    { label: "Próximo ao Vencimento", value: "23", status: "warning", color: "bg-yellow-500" },
+    { label: "Vencidos", value: "3", status: "error", color: "bg-red-500" },
+    { label: "Em Trânsito", value: "156", status: "info", color: "bg-blue-500" },
   ];
 
   return (
@@ -22,8 +22,8 @@ export default function Home() {
       <div className="p-4 space-y-6">
         {/* Welcome Section */}
         <div className="bg-white rounded-xl p-6 shadow-sm">
-          <h2 className="text-2xl font-bold text-neutral-800 mb-2">Good Morning!</h2>
-          <p className="text-neutral-600">Here's your freshness overview for today</p>
+          <h2 className="text-2xl font-bold text-neutral-800 mb-2">Bom Dia!</h2>
+          <p className="text-neutral-600">Aqui está a visão geral do frescor para hoje</p>
         </div>
 
         {/* Status Cards */}
@@ -48,7 +48,7 @@ export default function Home() {
           <CardHeader>
             <CardTitle className="flex items-center text-lg">
               <AlertTriangle className="w-5 h-5 text-primary mr-2" />
-              Recent Alerts
+              Alertas Recentes
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
@@ -81,20 +81,20 @@ export default function Home() {
         {/* Quick Actions */}
         <Card className="shadow-sm">
           <CardHeader>
-            <CardTitle className="text-lg">Quick Actions</CardTitle>
+            <CardTitle className="text-lg">Ações Rápidas</CardTitle>
           </CardHeader>
           <CardContent className="grid grid-cols-2 gap-3">
             <button className="p-4 bg-primary text-white rounded-lg font-medium hover:bg-primary/90 transition-colors">
-              Add Inventory
+              Adicionar Estoque
             </button>
             <button className="p-4 bg-secondary text-white rounded-lg font-medium hover:bg-secondary/90 transition-colors">
-              Schedule Delivery
+              Agendar Entrega
             </button>
             <button className="p-4 bg-accent text-white rounded-lg font-medium hover:bg-accent/90 transition-colors">
-              Generate Report
+              Gerar Relatório
             </button>
             <button className="p-4 bg-neutral-600 text-white rounded-lg font-medium hover:bg-neutral-700 transition-colors">
-              View Analytics
+              Ver Análises
             </button>
           </CardContent>
         </Card>

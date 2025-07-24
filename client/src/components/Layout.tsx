@@ -36,37 +36,29 @@ export default function Layout({ children }: LayoutProps) {
       {/* Bottom Navigation */}
       <nav className="fixed bottom-0 left-1/2 transform -translate-x-1/2 w-full max-w-sm bg-white border-t border-gray-200 z-40">
         <div className="flex justify-around py-2">
-          <Link href="/">
-            <a className={`flex flex-col items-center py-2 px-4 transition-colors ${
-              isActive("/") ? "text-primary" : "text-neutral-400 hover:text-primary"
-            }`}>
-              <Home className="w-5 h-5 mb-1" />
-              <span className="text-xs">Home</span>
-            </a>
+          <Link href="/" className={`flex flex-col items-center py-2 px-4 transition-colors ${
+            isActive("/") ? "text-primary" : "text-neutral-400 hover:text-primary"
+          }`}>
+            <Home className="w-5 h-5 mb-1" />
+            <span className="text-xs">Início</span>
           </Link>
-          <Link href="/analytics">
-            <a className={`flex flex-col items-center py-2 px-4 transition-colors ${
-              isActive("/analytics") ? "text-primary" : "text-neutral-400 hover:text-primary"
-            }`}>
-              <BarChart3 className="w-5 h-5 mb-1" />
-              <span className="text-xs">Analytics</span>
-            </a>
+          <Link href="/analytics" className={`flex flex-col items-center py-2 px-4 transition-colors ${
+            isActive("/analytics") ? "text-primary" : "text-neutral-400 hover:text-primary"
+          }`}>
+            <BarChart3 className="w-5 h-5 mb-1" />
+            <span className="text-xs">Análises</span>
           </Link>
-          <Link href="/calendar">
-            <a className={`flex flex-col items-center py-2 px-4 transition-colors ${
-              isActive("/calendar") ? "text-primary" : "text-neutral-400 hover:text-primary"
-            }`}>
-              <Calendar className="w-5 h-5 mb-1" />
-              <span className="text-xs">Calendar</span>
-            </a>
+          <Link href="/calendar" className={`flex flex-col items-center py-2 px-4 transition-colors ${
+            isActive("/calendar") ? "text-primary" : "text-neutral-400 hover:text-primary"
+          }`}>
+            <Calendar className="w-5 h-5 mb-1" />
+            <span className="text-xs">Agenda</span>
           </Link>
-          <Link href="/settings">
-            <a className={`flex flex-col items-center py-2 px-4 transition-colors ${
-              isActive("/settings") ? "text-primary" : "text-neutral-400 hover:text-primary"
-            }`}>
-              <Settings className="w-5 h-5 mb-1" />
-              <span className="text-xs">Settings</span>
-            </a>
+          <Link href="/settings" className={`flex flex-col items-center py-2 px-4 transition-colors ${
+            isActive("/settings") ? "text-primary" : "text-neutral-400 hover:text-primary"
+          }`}>
+            <Settings className="w-5 h-5 mb-1" />
+            <span className="text-xs">Config</span>
           </Link>
         </div>
       </nav>

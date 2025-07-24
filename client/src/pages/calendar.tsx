@@ -9,16 +9,16 @@ export default function CalendarPage() {
   const [date, setDate] = useState<Date>(new Date());
 
   const events = [
-    { date: new Date(2024, 0, 15), title: "Weekly Inspection", type: "inspection", icon: CheckCircle },
-    { date: new Date(2024, 0, 22), title: "Produce Delivery", type: "delivery", icon: Truck },
-    { date: new Date(2024, 0, 29), title: "Equipment Maintenance", type: "maintenance", icon: AlertCircle },
+    { date: new Date(2024, 0, 15), title: "Inspeção Semanal", type: "inspection", icon: CheckCircle },
+    { date: new Date(2024, 0, 22), title: "Entrega de Produtos", type: "delivery", icon: Truck },
+    { date: new Date(2024, 0, 29), title: "Manutenção de Equipamentos", type: "maintenance", icon: AlertCircle },
   ];
 
   const upcomingEvents = [
-    { id: 1, title: "Fresh Produce Delivery", date: "Today, 2:00 PM", type: "delivery", color: "bg-amber-500" },
-    { id: 2, title: "Cold Storage Inspection", date: "Tomorrow, 9:00 AM", type: "inspection", color: "bg-blue-500" },
-    { id: 3, title: "Supplier Meeting", date: "Jan 20, 10:30 AM", type: "meeting", color: "bg-purple-500" },
-    { id: 4, title: "Equipment Maintenance", date: "Jan 25, 3:00 PM", type: "maintenance", color: "bg-red-500" },
+    { id: 1, title: "Entrega de Produtos Frescos", date: "Hoje, 14:00", type: "delivery", color: "bg-amber-500" },
+    { id: 2, title: "Inspeção de Câmara Fria", date: "Amanhã, 09:00", type: "inspection", color: "bg-blue-500" },
+    { id: 3, title: "Reunião com Fornecedor", date: "20 Jan, 10:30", type: "meeting", color: "bg-purple-500" },
+    { id: 4, title: "Manutenção de Equipamentos", date: "25 Jan, 15:00", type: "maintenance", color: "bg-red-500" },
   ];
 
   return (
@@ -28,9 +28,9 @@ export default function CalendarPage() {
         <div className="bg-white rounded-xl p-6 shadow-sm">
           <h2 className="text-2xl font-bold text-neutral-800 mb-2 flex items-center">
             <CalendarIcon className="w-6 h-6 text-primary mr-3" />
-            Delivery Schedule
+            Agenda de Entregas
           </h2>
-          <p className="text-neutral-600">Plan and track your inventory events</p>
+          <p className="text-neutral-600">Planeje e acompanhe seus eventos de estoque</p>
         </div>
 
         {/* Calendar */}
@@ -47,15 +47,15 @@ export default function CalendarPage() {
             <div className="flex items-center justify-center space-x-4 pt-4 border-t border-gray-100 mt-4">
               <div className="flex items-center space-x-2">
                 <div className="w-3 h-3 bg-primary rounded-full"></div>
-                <span className="text-sm text-neutral-600">Today</span>
+                <span className="text-sm text-neutral-600">Hoje</span>
               </div>
               <div className="flex items-center space-x-2">
                 <div className="w-3 h-3 bg-accent rounded-full"></div>
-                <span className="text-sm text-neutral-600">Delivery</span>
+                <span className="text-sm text-neutral-600">Entrega</span>
               </div>
               <div className="flex items-center space-x-2">
                 <div className="w-3 h-3 bg-secondary rounded-full"></div>
-                <span className="text-sm text-neutral-600">Inspection</span>
+                <span className="text-sm text-neutral-600">Inspeção</span>
               </div>
             </div>
           </CardContent>
@@ -64,7 +64,7 @@ export default function CalendarPage() {
         {/* Upcoming Events */}
         <Card className="shadow-sm">
           <CardHeader>
-            <CardTitle className="text-lg">Upcoming Events</CardTitle>
+            <CardTitle className="text-lg">Próximos Eventos</CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
             {upcomingEvents.map((event) => (
@@ -85,20 +85,20 @@ export default function CalendarPage() {
         {/* Quick Schedule */}
         <Card className="shadow-sm">
           <CardHeader>
-            <CardTitle className="text-lg">Quick Schedule</CardTitle>
+            <CardTitle className="text-lg">Agendamento Rápido</CardTitle>
           </CardHeader>
           <CardContent className="grid grid-cols-2 gap-3">
             <button className="p-4 bg-primary text-white rounded-lg font-medium hover:bg-primary/90 transition-colors">
-              Schedule Delivery
+              Agendar Entrega
             </button>
             <button className="p-4 bg-secondary text-white rounded-lg font-medium hover:bg-secondary/90 transition-colors">
-              Plan Inspection
+              Planejar Inspeção
             </button>
             <button className="p-4 bg-accent text-white rounded-lg font-medium hover:bg-accent/90 transition-colors">
-              Set Reminder
+              Definir Lembrete
             </button>
             <button className="p-4 bg-neutral-600 text-white rounded-lg font-medium hover:bg-neutral-700 transition-colors">
-              View Reports
+              Ver Relatórios
             </button>
           </CardContent>
         </Card>

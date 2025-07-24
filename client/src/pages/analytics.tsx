@@ -15,11 +15,11 @@ export default function Analytics() {
   ];
 
   const inventoryData = [
-    { category: "Fruits", count: 245 },
-    { category: "Vegetables", count: 312 },
-    { category: "Dairy", count: 156 },
-    { category: "Meat", count: 89 },
-    { category: "Bakery", count: 67 },
+    { category: "Frutas", count: 245 },
+    { category: "Vegetais", count: 312 },
+    { category: "Laticínios", count: 156 },
+    { category: "Carnes", count: 89 },
+    { category: "Padaria", count: 67 },
   ];
 
   const chartConfig = {
@@ -38,8 +38,8 @@ export default function Analytics() {
       <div className="p-4 space-y-6">
         {/* Header */}
         <div className="bg-white rounded-xl p-6 shadow-sm">
-          <h2 className="text-2xl font-bold text-neutral-800 mb-2">Analytics Dashboard</h2>
-          <p className="text-neutral-600">Track freshness and inventory metrics</p>
+          <h2 className="text-2xl font-bold text-neutral-800 mb-2">Painel de Análises</h2>
+          <p className="text-neutral-600">Acompanhe métricas de frescor e estoque</p>
         </div>
 
         {/* Key Metrics */}
@@ -47,18 +47,18 @@ export default function Analytics() {
           <Card className="shadow-sm">
             <CardContent className="p-4">
               <div className="text-center">
-                <p className="text-sm text-neutral-600">Avg Freshness</p>
+                <p className="text-sm text-neutral-600">Frescor Médio</p>
                 <p className="text-2xl font-bold text-primary">87.3%</p>
-                <p className="text-xs text-green-600">↑ 2.1% vs last week</p>
+                <p className="text-xs text-green-600">↑ 2.1% vs semana passada</p>
               </div>
             </CardContent>
           </Card>
           <Card className="shadow-sm">
             <CardContent className="p-4">
               <div className="text-center">
-                <p className="text-sm text-neutral-600">Total Items</p>
+                <p className="text-sm text-neutral-600">Total de Itens</p>
                 <p className="text-2xl font-bold text-secondary">869</p>
-                <p className="text-xs text-green-600">↑ 5.2% vs last week</p>
+                <p className="text-xs text-green-600">↑ 5.2% vs semana passada</p>
               </div>
             </CardContent>
           </Card>
@@ -67,7 +67,7 @@ export default function Analytics() {
         {/* Freshness Trend Chart */}
         <Card className="shadow-sm">
           <CardHeader>
-            <CardTitle className="text-lg">Freshness Trend (7 Days)</CardTitle>
+            <CardTitle className="text-lg">Tendência de Frescor (7 Dias)</CardTitle>
           </CardHeader>
           <CardContent>
             <ChartContainer config={chartConfig} className="h-[200px]">
@@ -91,7 +91,7 @@ export default function Analytics() {
         {/* Inventory Distribution */}
         <Card className="shadow-sm">
           <CardHeader>
-            <CardTitle className="text-lg">Inventory by Category</CardTitle>
+            <CardTitle className="text-lg">Estoque por Categoria</CardTitle>
           </CardHeader>
           <CardContent>
             <ChartContainer config={chartConfig} className="h-[200px]">
@@ -109,24 +109,24 @@ export default function Analytics() {
         {/* Performance Metrics */}
         <Card className="shadow-sm">
           <CardHeader>
-            <CardTitle className="text-lg">Performance Metrics</CardTitle>
+            <CardTitle className="text-lg">Métricas de Desempenho</CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="flex justify-between items-center">
-              <span className="text-neutral-600">Waste Reduction</span>
+              <span className="text-neutral-600">Redução de Desperdício</span>
               <span className="font-bold text-green-600">-15.3%</span>
             </div>
             <div className="flex justify-between items-center">
-              <span className="text-neutral-600">Storage Efficiency</span>
+              <span className="text-neutral-600">Eficiência de Armazenamento</span>
               <span className="font-bold text-blue-600">92.7%</span>
             </div>
             <div className="flex justify-between items-center">
-              <span className="text-neutral-600">Delivery On-Time</span>
+              <span className="text-neutral-600">Entregas no Prazo</span>
               <span className="font-bold text-purple-600">96.2%</span>
             </div>
             <div className="flex justify-between items-center">
-              <span className="text-neutral-600">Cost Savings</span>
-              <span className="font-bold text-amber-600">$2,847</span>
+              <span className="text-neutral-600">Economia de Custos</span>
+              <span className="font-bold text-amber-600">R$ 2.847</span>
             </div>
           </CardContent>
         </Card>
