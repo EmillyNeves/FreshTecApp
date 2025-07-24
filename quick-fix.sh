@@ -44,11 +44,27 @@ else
 fi
 
 echo ""
-echo "🎯 Agora tente executar (em ordem de preferência):"
-echo "  1. node start-npm.js      (Mais compatível)"
-echo "  2. node start-simple.js   (Alternativa)"
-echo "  3. node start.js          (Original)"
-echo "  4. npm run dev            (Direto)"
+echo "🔧 Criando backup e usando configurações locais..."
+# Fazer backup dos arquivos originais se não existirem
+if [ ! -f "vite.config.ts.backup" ]; then
+    cp vite.config.ts vite.config.ts.backup
+fi
+
+if [ ! -f "tsconfig.json.backup" ]; then
+    cp tsconfig.json tsconfig.json.backup
+fi
+
+# Usar configurações compatíveis
+cp vite.config.local.ts vite.config.ts
+cp tsconfig-local.json tsconfig.json
+
+echo "✅ Configurações locais aplicadas"
 echo ""
-echo "Se ainda houver problemas com TypeScript:"
-echo "  cp tsconfig-local.json tsconfig.json"
+echo "🎯 Agora tente executar (em ordem de preferência):"
+echo "  1. node start-local.js    (Configuração local)"
+echo "  2. npm run dev            (Direto)"
+echo "  3. node start-npm.js      (NPM wrapper)"
+echo ""
+echo "Para restaurar configurações originais:"
+echo "  cp vite.config.ts.backup vite.config.ts"
+echo "  cp tsconfig.json.backup tsconfig.json"

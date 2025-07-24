@@ -8,6 +8,7 @@ Baseado nos erros que você encontrou:
 3. ❌ "Cannot find module 'vite'"
 4. ❌ "Cannot find module '@vitejs/plugin-react'"
 5. ❌ Erro de sintaxe no tsconfig.json
+6. ❌ Erro "import.meta.dirname" no vite.config.ts (Node.js 18)
 
 ## Soluções Implementadas
 
@@ -24,7 +25,13 @@ Baseado nos erros que você encontrou:
 
 ## Como Resolver (Ordem Recomendada)
 
-### Solução Rápida (Recomendada)
+### Solução para Erro do Vite Config ⭐
+```bash
+bash quick-fix.sh
+node start-direct.js
+```
+
+### Solução Alternativa
 ```bash
 bash quick-fix.sh
 node start-npm.js
@@ -46,17 +53,17 @@ node start.js
 
 Depois de resolver os problemas, use qualquer um destes (em ordem de compatibilidade):
 ```bash
-# Opção 1 (Mais Compatível) ⭐
+# Opção 1 (Para problemas de Vite Config) ⭐
+node start-direct.js
+
+# Opção 2 (Compatível NPM)
 node start-npm.js
 
-# Opção 2 (Direto)
+# Opção 3 (Configuração local)
+node start-local.js
+
+# Opção 4 (Direto - pode ter problemas)
 npm run dev
-
-# Opção 3 (Alternativa)
-node start-simple.js
-
-# Opção 4 (Original - requer tsx)
-node start.js
 ```
 
 ## Verificação de Sucesso
