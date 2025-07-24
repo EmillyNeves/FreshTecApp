@@ -72,16 +72,16 @@ export default function Login() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50 flex items-center justify-center p-4">
-      <Card className="w-full max-w-md shadow-lg">
+    <div className="min-h-screen bg-gradient-to-br from-green-50 via-blue-50 to-emerald-50 flex items-center justify-center p-4">
+      <Card className="w-full max-w-md shadow-xl border-0 bg-white/95 backdrop-blur-sm">
         <CardHeader className="text-center pb-8">
-          <div className="flex items-center justify-center mb-4">
-            <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
-              <Leaf className="w-6 h-6 text-white" />
+          <div className="flex items-center justify-center mb-6">
+            <div className="w-16 h-16 bg-gradient-to-br from-primary to-emerald-600 rounded-2xl flex items-center justify-center shadow-lg">
+              <Leaf className="w-8 h-8 text-white" />
             </div>
           </div>
-          <CardTitle className="text-2xl font-bold text-gray-800">FreshTec</CardTitle>
-          <p className="text-gray-600 mt-2">Passaporte do Frescor</p>
+          <CardTitle className="text-3xl font-bold text-gray-900 mb-2">FreshTec</CardTitle>
+          <p className="text-gray-600 text-lg">Passaporte do Frescor</p>
         </CardHeader>
 
         <CardContent>
@@ -154,9 +154,9 @@ export default function Login() {
               </div>
             </div>
 
-            <div className="space-y-2">
-              <p className="text-sm text-center text-gray-600 mb-3">Entrar como convidado:</p>
-              <div className="grid grid-cols-2 gap-2">
+            <div className="space-y-3">
+              <p className="text-sm text-center text-gray-600 font-medium">Explorar como demonstração:</p>
+              <div className="grid grid-cols-2 gap-3">
                 {roleOptions.map((option) => {
                   const Icon = option.icon;
                   return (
@@ -165,10 +165,10 @@ export default function Login() {
                       variant="outline"
                       size="sm"
                       onClick={() => handleGuestLogin(option.value as UserRole)}
-                      className="flex items-center justify-center space-x-2 h-12"
+                      className="flex flex-col items-center justify-center space-y-1 h-16 p-3 hover:bg-gray-50 border-2 transition-all"
                     >
-                      <Icon className="w-4 h-4" />
-                      <span className="text-xs">{option.label}</span>
+                      <Icon className="w-5 h-5" />
+                      <span className="text-xs font-medium">{option.label}</span>
                     </Button>
                   );
                 })}

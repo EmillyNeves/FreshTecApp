@@ -25,10 +25,10 @@ export default function HomePage() {
     ];
 
     return (
-      <div className="bg-amber-50 border-b border-amber-200 p-3">
+      <div className="bg-gradient-to-r from-blue-50 to-green-50 border-b border-gray-200 p-4 shadow-sm">
         <div className="max-w-md mx-auto">
-          <p className="text-xs text-amber-700 mb-2 text-center">Modo Convidado - Trocar visualização:</p>
-          <div className="flex justify-center space-x-1">
+          <p className="text-sm text-gray-700 mb-3 text-center font-medium">Modo Demonstração - Trocar Interface:</p>
+          <div className="grid grid-cols-2 gap-2">
             {roleOptions.map((option) => {
               const Icon = option.icon;
               const isActive = user?.role === option.value;
@@ -38,9 +38,13 @@ export default function HomePage() {
                   variant={isActive ? "default" : "outline"}
                   size="sm"
                   onClick={() => loginAsGuest(option.value as UserRole)}
-                  className={`text-xs px-2 py-1 h-8 ${isActive ? 'bg-primary text-white' : 'bg-white text-gray-600'}`}
+                  className={`text-xs px-3 py-2 h-10 transition-all ${
+                    isActive 
+                      ? 'bg-primary text-white shadow-md border-primary' 
+                      : 'bg-white text-gray-700 hover:bg-gray-50 border-gray-300'
+                  }`}
                 >
-                  <Icon className="w-3 h-3 mr-1" />
+                  <Icon className="w-4 h-4 mr-2" />
                   {option.label}
                 </Button>
               );
@@ -95,55 +99,66 @@ export default function HomePage() {
 
   // Dashboard específico para Produtor
   const ProducerDashboard = () => (
-    <div className="p-4 space-y-6 pb-20">
-      <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-xl p-6">
-        <h2 className="text-2xl font-bold text-neutral-800 mb-2">Olá, {user?.name}!</h2>
-        <p className="text-neutral-600">{user?.company}</p>
-        <Badge className="mt-2 bg-green-100 text-green-800">Produtor</Badge>
+    <div className="p-4 space-y-6 pb-24">
+      <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-6 border border-green-100 shadow-sm">
+        <h2 className="text-2xl font-bold text-gray-900 mb-2">Olá, {user?.name}!</h2>
+        <p className="text-gray-600 mb-3">{user?.company}</p>
+        <Badge className="bg-green-100 text-green-800 border-green-200 px-3 py-1 text-sm font-medium">
+          <Leaf className="w-3 h-3 mr-1" />
+          Produtor
+        </Badge>
       </div>
 
       {/* Métricas de Produção */}
-      <div className="grid grid-cols-2 gap-4">
-        <Card>
+      <div className="grid grid-cols-2 gap-3">
+        <Card className="border-0 shadow-sm bg-white">
           <CardContent className="p-4">
             <div className="flex items-center space-x-3">
-              <div className="w-3 h-3 rounded-full bg-green-500"></div>
+              <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
+                <Package className="w-5 h-5 text-green-600" />
+              </div>
               <div>
-                <p className="text-sm text-neutral-600">Lotes Ativos</p>
-                <p className="text-xl font-bold text-neutral-800">24</p>
+                <p className="text-sm text-gray-600 font-medium">Lotes Ativos</p>
+                <p className="text-2xl font-bold text-gray-900">24</p>
               </div>
             </div>
           </CardContent>
         </Card>
-        <Card>
+        <Card className="border-0 shadow-sm bg-white">
           <CardContent className="p-4">
             <div className="flex items-center space-x-3">
-              <div className="w-3 h-3 rounded-full bg-blue-500"></div>
+              <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
+                <Truck className="w-5 h-5 text-blue-600" />
+              </div>
               <div>
-                <p className="text-sm text-neutral-600">Em Transporte</p>
-                <p className="text-xl font-bold text-neutral-800">8</p>
+                <p className="text-sm text-gray-600 font-medium">Em Transporte</p>
+                <p className="text-2xl font-bold text-gray-900">8</p>
               </div>
             </div>
           </CardContent>
         </Card>
-        <Card>
+        <Card className="border-0 shadow-sm bg-white">
           <CardContent className="p-4">
             <div className="flex items-center space-x-3">
-              <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div className="w-10 h-10 rounded-full bg-yellow-100 flex items-center justify-center">
+                <TreePine className="w-5 h-5 text-yellow-600" />
+              </div>
               <div>
-                <p className="text-sm text-neutral-600">Pegada CO2</p>
-                <p className="text-xl font-bold text-neutral-800">2.4t</p>
+                <p className="text-sm text-gray-600 font-medium">Pegada CO2</p>
+                <p className="text-2xl font-bold text-gray-900">2.4t</p>
               </div>
             </div>
           </CardContent>
         </Card>
-        <Card>
+        <Card className="border-0 shadow-sm bg-white">
           <CardContent className="p-4">
             <div className="flex items-center space-x-3">
-              <div className="w-3 h-3 rounded-full bg-purple-500"></div>
+              <div className="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center">
+                <CheckCircle className="w-5 h-5 text-purple-600" />
+              </div>
               <div>
-                <p className="text-sm text-neutral-600">Conformidade</p>
-                <p className="text-xl font-bold text-neutral-800">98%</p>
+                <p className="text-sm text-gray-600 font-medium">Conformidade</p>
+                <p className="text-2xl font-bold text-gray-900">98%</p>
               </div>
             </div>
           </CardContent>
@@ -194,55 +209,66 @@ export default function HomePage() {
 
   // Dashboard específico para Transportador
   const TransporterDashboard = () => (
-    <div className="p-4 space-y-6 pb-20">
-      <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-6">
-        <h2 className="text-2xl font-bold text-neutral-800 mb-2">Olá, {user?.name}!</h2>
-        <p className="text-neutral-600">{user?.company}</p>
-        <Badge className="mt-2 bg-blue-100 text-blue-800">Transportador</Badge>
+    <div className="p-4 space-y-6 pb-24">
+      <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-6 border border-blue-100 shadow-sm">
+        <h2 className="text-2xl font-bold text-gray-900 mb-2">Olá, {user?.name}!</h2>
+        <p className="text-gray-600 mb-3">{user?.company}</p>
+        <Badge className="bg-blue-100 text-blue-800 border-blue-200 px-3 py-1 text-sm font-medium">
+          <Truck className="w-3 h-3 mr-1" />
+          Transportador
+        </Badge>
       </div>
 
       {/* Métricas de Transporte */}
-      <div className="grid grid-cols-2 gap-4">
-        <Card>
+      <div className="grid grid-cols-2 gap-3">
+        <Card className="border-0 shadow-sm bg-white">
           <CardContent className="p-4">
             <div className="flex items-center space-x-3">
-              <Truck className="w-6 h-6 text-blue-600" />
+              <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
+                <Truck className="w-5 h-5 text-blue-600" />
+              </div>
               <div>
-                <p className="text-sm text-neutral-600">Rotas Ativas</p>
-                <p className="text-xl font-bold text-neutral-800">12</p>
+                <p className="text-sm text-gray-600 font-medium">Rotas Ativas</p>
+                <p className="text-2xl font-bold text-gray-900">12</p>
               </div>
             </div>
           </CardContent>
         </Card>
-        <Card>
+        <Card className="border-0 shadow-sm bg-white">
           <CardContent className="p-4">
             <div className="flex items-center space-x-3">
-              <MapPin className="w-6 h-6 text-green-600" />
+              <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
+                <MapPin className="w-5 h-5 text-green-600" />
+              </div>
               <div>
-                <p className="text-sm text-neutral-600">Entregas Hoje</p>
-                <p className="text-xl font-bold text-neutral-800">28</p>
+                <p className="text-sm text-gray-600 font-medium">Entregas Hoje</p>
+                <p className="text-2xl font-bold text-gray-900">28</p>
               </div>
             </div>
           </CardContent>
         </Card>
-        <Card>
+        <Card className="border-0 shadow-sm bg-white">
           <CardContent className="p-4">
             <div className="flex items-center space-x-3">
-              <TreePine className="w-6 h-6 text-green-600" />
+              <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
+                <TreePine className="w-5 h-5 text-green-600" />
+              </div>
               <div>
-                <p className="text-sm text-neutral-600">CO2 Economizado</p>
-                <p className="text-xl font-bold text-neutral-800">1.2t</p>
+                <p className="text-sm text-gray-600 font-medium">CO2 Economizado</p>
+                <p className="text-2xl font-bold text-gray-900">1.2t</p>
               </div>
             </div>
           </CardContent>
         </Card>
-        <Card>
+        <Card className="border-0 shadow-sm bg-white">
           <CardContent className="p-4">
             <div className="flex items-center space-x-3">
-              <CheckCircle className="w-6 h-6 text-green-600" />
+              <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
+                <CheckCircle className="w-5 h-5 text-green-600" />
+              </div>
               <div>
-                <p className="text-sm text-neutral-600">Taxa Sucesso</p>
-                <p className="text-xl font-bold text-neutral-800">96%</p>
+                <p className="text-sm text-gray-600 font-medium">Taxa Sucesso</p>
+                <p className="text-2xl font-bold text-gray-900">96%</p>
               </div>
             </div>
           </CardContent>
@@ -285,55 +311,66 @@ export default function HomePage() {
 
   // Dashboard específico para Varejista
   const RetailerDashboard = () => (
-    <div className="p-4 space-y-6 pb-20">
-      <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-6">
-        <h2 className="text-2xl font-bold text-neutral-800 mb-2">Olá, {user?.name}!</h2>
-        <p className="text-neutral-600">{user?.company}</p>
-        <Badge className="mt-2 bg-purple-100 text-purple-800">Varejista</Badge>
+    <div className="p-4 space-y-6 pb-24">
+      <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-6 border border-purple-100 shadow-sm">
+        <h2 className="text-2xl font-bold text-gray-900 mb-2">Olá, {user?.name}!</h2>
+        <p className="text-gray-600 mb-3">{user?.company}</p>
+        <Badge className="bg-purple-100 text-purple-800 border-purple-200 px-3 py-1 text-sm font-medium">
+          <Store className="w-3 h-3 mr-1" />
+          Varejista
+        </Badge>
       </div>
 
       {/* Métricas de Estoque */}
-      <div className="grid grid-cols-2 gap-4">
-        <Card>
+      <div className="grid grid-cols-2 gap-3">
+        <Card className="border-0 shadow-sm bg-white">
           <CardContent className="p-4">
             <div className="flex items-center space-x-3">
-              <Package className="w-6 h-6 text-green-600" />
+              <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
+                <Package className="w-5 h-5 text-green-600" />
+              </div>
               <div>
-                <p className="text-sm text-neutral-600">Itens Frescos</p>
-                <p className="text-xl font-bold text-neutral-800">847</p>
+                <p className="text-sm text-gray-600 font-medium">Itens Frescos</p>
+                <p className="text-2xl font-bold text-gray-900">847</p>
               </div>
             </div>
           </CardContent>
         </Card>
-        <Card>
+        <Card className="border-0 shadow-sm bg-white">
           <CardContent className="p-4">
             <div className="flex items-center space-x-3">
-              <AlertTriangle className="w-6 h-6 text-yellow-600" />
+              <div className="w-10 h-10 rounded-full bg-yellow-100 flex items-center justify-center">
+                <AlertTriangle className="w-5 h-5 text-yellow-600" />
+              </div>
               <div>
-                <p className="text-sm text-neutral-600">Próx. Vencimento</p>
-                <p className="text-xl font-bold text-neutral-800">23</p>
+                <p className="text-sm text-gray-600 font-medium">Próx. Vencimento</p>
+                <p className="text-2xl font-bold text-gray-900">23</p>
               </div>
             </div>
           </CardContent>
         </Card>
-        <Card>
+        <Card className="border-0 shadow-sm bg-white">
           <CardContent className="p-4">
             <div className="flex items-center space-x-3">
-              <Droplets className="w-6 h-6 text-red-600" />
+              <div className="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center">
+                <Droplets className="w-5 h-5 text-red-600" />
+              </div>
               <div>
-                <p className="text-sm text-neutral-600">Vencidos</p>
-                <p className="text-xl font-bold text-neutral-800">3</p>
+                <p className="text-sm text-gray-600 font-medium">Vencidos</p>
+                <p className="text-2xl font-bold text-gray-900">3</p>
               </div>
             </div>
           </CardContent>
         </Card>
-        <Card>
+        <Card className="border-0 shadow-sm bg-white">
           <CardContent className="p-4">
             <div className="flex items-center space-x-3">
-              <Truck className="w-6 h-6 text-blue-600" />
+              <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
+                <Truck className="w-5 h-5 text-blue-600" />
+              </div>
               <div>
-                <p className="text-sm text-neutral-600">Em Trânsito</p>
-                <p className="text-xl font-bold text-neutral-800">156</p>
+                <p className="text-sm text-gray-600 font-medium">Em Trânsito</p>
+                <p className="text-2xl font-bold text-gray-900">156</p>
               </div>
             </div>
           </CardContent>
@@ -376,24 +413,27 @@ export default function HomePage() {
 
   // Dashboard específico para Consumidor
   const ConsumerDashboard = () => (
-    <div className="p-4 space-y-6 pb-20">
-      <div className="bg-gradient-to-r from-green-50 to-teal-50 rounded-xl p-6">
-        <h2 className="text-2xl font-bold text-neutral-800 mb-2">Olá, {user?.name}!</h2>
-        <p className="text-neutral-600">Bem-vindo ao FreshTec</p>
-        <Badge className="mt-2 bg-green-100 text-green-800">Consumidor</Badge>
+    <div className="p-4 space-y-6 pb-24">
+      <div className="bg-gradient-to-r from-green-50 to-teal-50 rounded-2xl p-6 border border-green-100 shadow-sm">
+        <h2 className="text-2xl font-bold text-gray-900 mb-2">Olá, {user?.name}!</h2>
+        <p className="text-gray-600 mb-3">Bem-vindo ao FreshTec</p>
+        <Badge className="bg-green-100 text-green-800 border-green-200 px-3 py-1 text-sm font-medium">
+          <Users className="w-3 h-3 mr-1" />
+          Consumidor
+        </Badge>
       </div>
 
       {/* Scanner QR e Pote Inteligente */}
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-2 gap-3">
         <Link href="/qr-scanner">
-          <Button className="h-24 w-full flex flex-col items-center justify-center space-y-2 bg-primary">
+          <Button className="h-24 w-full flex flex-col items-center justify-center space-y-2 bg-primary hover:bg-primary/90 shadow-md">
             <QrCode className="w-8 h-8" />
-            <span>Escanear QR</span>
+            <span className="font-medium">Escanear QR</span>
           </Button>
         </Link>
-        <Button variant="outline" className="h-24 flex flex-col items-center justify-center space-y-2">
+        <Button variant="outline" className="h-24 flex flex-col items-center justify-center space-y-2 border-2 border-gray-200 hover:bg-gray-50 shadow-sm">
           <Package className="w-8 h-8" />
-          <span>Pote Inteligente</span>
+          <span className="font-medium">Pote Inteligente</span>
         </Button>
       </div>
 
