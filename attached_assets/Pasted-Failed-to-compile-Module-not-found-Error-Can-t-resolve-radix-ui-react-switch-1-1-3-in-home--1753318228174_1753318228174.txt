@@ -1,0 +1,182 @@
+Failed to compile.
+
+Module not found: Error: Can't resolve '@radix-ui/react-switch@1.1.3' in '/home/emilly/Downloads/FreshTec Mobile Applicatio/src/components/ui'
+ERROR in ./src/components/ui/switch.tsx 7:0-64
+Module not found: Error: Can't resolve '@radix-ui/react-switch@1.1.3' in '/home/emilly/Downloads/FreshTec Mobile Applicatio/src/components/ui'
+
+webpack compiled with 1 error
+ERROR in src/components/SettingsScreen.tsx:112:33
+TS7006: Parameter 'value' implicitly has an 'any' type.
+    110 |             <Switch
+    111 |               checked={notifications.freshness}
+  > 112 |               onCheckedChange={(value) => handleNotificationChange('freshness', value)}
+        |                                 ^^^^^
+    113 |             />
+    114 |           </div>
+    115 |           
+
+ERROR in src/components/SettingsScreen.tsx:123:33
+TS7006: Parameter 'value' implicitly has an 'any' type.
+    121 |             <Switch
+    122 |               checked={notifications.temperature}
+  > 123 |               onCheckedChange={(value) => handleNotificationChange('temperature', value)}
+        |                                 ^^^^^
+    124 |             />
+    125 |           </div>
+    126 |           
+
+ERROR in src/components/SettingsScreen.tsx:134:33
+TS7006: Parameter 'value' implicitly has an 'any' type.
+    132 |             <Switch
+    133 |               checked={notifications.delivery}
+  > 134 |               onCheckedChange={(value) => handleNotificationChange('delivery', value)}
+        |                                 ^^^^^
+    135 |             />
+    136 |           </div>
+    137 |           
+
+ERROR in src/components/SettingsScreen.tsx:145:33
+TS7006: Parameter 'value' implicitly has an 'any' type.
+    143 |             <Switch
+    144 |               checked={notifications.marketing}
+  > 145 |               onCheckedChange={(value) => handleNotificationChange('marketing', value)}
+        |                                 ^^^^^
+    146 |             />
+    147 |           </div>
+    148 |         </CardContent>
+
+ERROR in src/components/ui/calendar.tsx:63:9
+TS2322: Type '{ IconLeft: ({ className, ...props }: { [x: string]: any; className: any; }) => Element; IconRight: ({ className, ...props }: { [x: string]: any; className: any; }) => Element; }' is not assignable to type 'Partial<CustomComponents>'.
+  Object literal may only specify known properties, and 'IconLeft' does not exist in type 'Partial<CustomComponents>'.
+    61 |       }}
+    62 |       components={{
+  > 63 |         IconLeft: ({ className, ...props }) => (
+       |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  > 64 |           <ChevronLeft className={cn("size-4", className)} {...props} />
+       | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  > 65 |         ),
+       | ^^^^^^^^^^
+    66 |         IconRight: ({ className, ...props }) => (
+    67 |           <ChevronRight className={cn("size-4", className)} {...props} />
+    68 |         ),
+
+ERROR in src/components/ui/calendar.tsx:63:22
+TS7031: Binding element 'className' implicitly has an 'any' type.
+    61 |       }}
+    62 |       components={{
+  > 63 |         IconLeft: ({ className, ...props }) => (
+       |                      ^^^^^^^^^
+    64 |           <ChevronLeft className={cn("size-4", className)} {...props} />
+    65 |         ),
+    66 |         IconRight: ({ className, ...props }) => (
+
+ERROR in src/components/ui/calendar.tsx:66:23
+TS7031: Binding element 'className' implicitly has an 'any' type.
+    64 |           <ChevronLeft className={cn("size-4", className)} {...props} />
+    65 |         ),
+  > 66 |         IconRight: ({ className, ...props }) => (
+       |                       ^^^^^^^^^
+    67 |           <ChevronRight className={cn("size-4", className)} {...props} />
+    68 |         ),
+    69 |       }}
+
+ERROR in src/components/ui/chart.tsx:109:3
+TS2339: Property 'payload' does not exist on type 'Omit<Props<ValueType, NameType>, PropertiesReadFromContext> & { active?: boolean | undefined; includeHidden?: boolean | undefined; ... 17 more ...; axisId?: AxisId | undefined; } & ClassAttributes<...> & HTMLAttributes<...> & { ...; }'.
+    107 | function ChartTooltipContent({
+    108 |   active,
+  > 109 |   payload,
+        |   ^^^^^^^
+    110 |   className,
+    111 |   indicator = "dot",
+    112 |   hideLabel = false,
+
+ERROR in src/components/ui/chart.tsx:114:3
+TS2339: Property 'label' does not exist on type 'Omit<Props<ValueType, NameType>, PropertiesReadFromContext> & { active?: boolean | undefined; includeHidden?: boolean | undefined; ... 17 more ...; axisId?: AxisId | undefined; } & ClassAttributes<...> & HTMLAttributes<...> & { ...; }'.
+    112 |   hideLabel = false,
+    113 |   hideIndicator = false,
+  > 114 |   label,
+        |   ^^^^^
+    115 |   labelFormatter,
+    116 |   labelClassName,
+    117 |   formatter,
+
+ERROR in src/components/ui/chart.tsx:182:23
+TS7006: Parameter 'item' implicitly has an 'any' type.
+    180 |       {!nestLabel ? tooltipLabel : null}
+    181 |       <div className="grid gap-1.5">
+  > 182 |         {payload.map((item, index) => {
+        |                       ^^^^
+    183 |           const key = `${nameKey || item.name || item.dataKey || "value"}`;
+    184 |           const itemConfig = getPayloadConfigFromPayload(config, item, key);
+    185 |           const indicatorColor = color || item.payload.fill || item.color;
+
+ERROR in src/components/ui/chart.tsx:182:29
+TS7006: Parameter 'index' implicitly has an 'any' type.
+    180 |       {!nestLabel ? tooltipLabel : null}
+    181 |       <div className="grid gap-1.5">
+  > 182 |         {payload.map((item, index) => {
+        |                             ^^^^^
+    183 |           const key = `${nameKey || item.name || item.dataKey || "value"}`;
+    184 |           const itemConfig = getPayloadConfigFromPayload(config, item, key);
+    185 |           const indicatorColor = color || item.payload.fill || item.color;
+
+ERROR in src/components/ui/chart.tsx:260:39
+TS2344: Type '"payload" | "verticalAlign"' does not satisfy the constraint '"string" | "style" | "clipPath" | "filter" | "mask" | "path" | "className" | "key" | "name" | "type" | "suppressHydrationWarning" | "id" | "lang" | "tabIndex" | "role" | "content" | ... 420 more ... | "onBBoxUpdate"'.
+  Type '"payload"' is not assignable to type '"string" | "style" | "clipPath" | "filter" | "mask" | "path" | "className" | "key" | "name" | "type" | "suppressHydrationWarning" | "id" | "lang" | "tabIndex" | "role" | "content" | ... 420 more ... | "onBBoxUpdate"'.
+    258 |   nameKey,
+    259 | }: React.ComponentProps<"div"> &
+  > 260 |   Pick<RechartsPrimitive.LegendProps, "payload" | "verticalAlign"> & {
+        |                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    261 |     hideIcon?: boolean;
+    262 |     nameKey?: string;
+    263 |   }) {
+
+ERROR in src/components/ui/chart.tsx:266:17
+TS2339: Property 'length' does not exist on type '{}'.
+    264 |   const { config } = useChart();
+    265 |
+  > 266 |   if (!payload?.length) {
+        |                 ^^^^^^
+    267 |     return null;
+    268 |   }
+    269 |
+
+ERROR in src/components/ui/chart.tsx:278:16
+TS2339: Property 'map' does not exist on type '{}'.
+    276 |       )}
+    277 |     >
+  > 278 |       {payload.map((item) => {
+        |                ^^^
+    279 |         const key = `${nameKey || item.dataKey || "value"}`;
+    280 |         const itemConfig = getPayloadConfigFromPayload(config, item, key);
+    281 |
+
+ERROR in src/components/ui/chart.tsx:278:21
+TS7006: Parameter 'item' implicitly has an 'any' type.
+    276 |       )}
+    277 |     >
+  > 278 |       {payload.map((item) => {
+        |                     ^^^^
+    279 |         const key = `${nameKey || item.dataKey || "value"}`;
+    280 |         const itemConfig = getPayloadConfigFromPayload(config, item, key);
+    281 |
+
+ERROR in src/components/ui/switch.tsx:4:34
+TS2307: Cannot find module '@radix-ui/react-switch@1.1.3' or its corresponding type declarations.
+    2 |
+    3 | import * as React from "react";
+  > 4 | import * as SwitchPrimitive from "@radix-ui/react-switch@1.1.3";
+      |                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    5 |
+    6 | import { cn } from "./utils";
+    7 |
+
+ERROR in src/components/ui/tooltip.tsx:4:35
+TS2307: Cannot find module '@radix-ui/react-tooltip' or its corresponding type declarations.
+    2 |
+    3 | import * as React from "react";
+  > 4 | import * as TooltipPrimitive from "@radix-ui/react-tooltip";
+      |                                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+    5 |
+    6 | import { cn } from "./utils";
+    7 |
