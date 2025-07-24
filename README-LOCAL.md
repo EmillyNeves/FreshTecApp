@@ -44,10 +44,50 @@ npm run dev
    ```bash
    npm install
    ```
+   
+   **Se encontrar erros de TypeScript**, instale as dependências de desenvolvimento:
+   ```bash
+   npm install --save-dev @types/node @vitejs/plugin-react vite typescript tsx
+   ```
+
 3. Execute o projeto:
    ```bash
    node start.js
    ```
+
+## 🚨 Solucionando Problemas Comuns
+
+### Erro: "Cannot find type definition file for 'node'"
+```bash
+npm install --save-dev @types/node
+```
+
+### Erro: "Cannot find module 'vite'"
+```bash
+npm install --save-dev vite @vitejs/plugin-react
+```
+
+### Erro: "Cannot find module 'tsx'"
+```bash
+npm install --save-dev tsx
+```
+
+### Reinstalar todas as dependências:
+```bash
+rm -rf node_modules package-lock.json
+npm install
+```
+
+### Script automático para corrigir problemas:
+```bash
+bash fix-local-setup.sh
+```
+
+### Problemas com TypeScript Config:
+Se o `tsconfig.json` estiver com problemas, use o arquivo alternativo:
+```bash
+cp tsconfig-local.json tsconfig.json
+```
 
 ## 🌐 Acesso
 

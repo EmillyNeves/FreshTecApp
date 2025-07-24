@@ -38,6 +38,33 @@ else
     echo "✅ Dependências já instaladas"
 fi
 
+# Verificar se as dependências críticas estão instaladas
+echo "🔍 Verificando dependências críticas..."
+
+MISSING_DEPS=""
+
+if [ ! -d "node_modules/@types/node" ]; then
+    MISSING_DEPS="$MISSING_DEPS @types/node"
+fi
+
+if [ ! -d "node_modules/vite" ]; then
+    MISSING_DEPS="$MISSING_DEPS vite"
+fi
+
+if [ ! -d "node_modules/@vitejs/plugin-react" ]; then
+    MISSING_DEPS="$MISSING_DEPS @vitejs/plugin-react"
+fi
+
+if [ ! -d "node_modules/tsx" ]; then
+    MISSING_DEPS="$MISSING_DEPS tsx"
+fi
+
+if [ ! -z "$MISSING_DEPS" ]; then
+    echo "⚠️  Instalando dependências em falta:$MISSING_DEPS"
+    npm install --save-dev $MISSING_DEPS
+    echo "✅ Dependências críticas instaladas"
+fi
+
 echo ""
 echo "🎯 Configuração completa!"
 echo ""
