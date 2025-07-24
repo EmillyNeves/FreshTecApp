@@ -6,29 +6,24 @@ Este é o aplicativo móvel FreshTec que implementa o sistema "Passaporte do Fre
 
 Para executar o projeto localmente, você tem algumas opções:
 
-### Opção 1: Comando Simples (Recomendado)
+### Opção 1: NPM (Mais Compatível) ⭐
 ```bash
-node start.js
+node start-npm.js
 ```
 
-### Opção 2: Usando npm (se você configurar manualmente)
-Se você quiser usar `npm start`, adicione ao seu `package.json` local:
-```json
-{
-  "scripts": {
-    "start": "node start.js"
-  }
-}
-```
-
-Depois execute:
-```bash
-npm start
-```
-
-### Opção 3: Comando direto
+### Opção 2: Comando Direto
 ```bash
 npm run dev
+```
+
+### Opção 3: Script Simples (Alternativa)
+```bash
+node start-simple.js
+```
+
+### Opção 4: Script Original
+```bash
+node start.js
 ```
 
 ## 📋 Pré-requisitos
@@ -50,9 +45,13 @@ npm run dev
    npm install --save-dev @types/node @vitejs/plugin-react vite typescript tsx
    ```
 
-3. Execute o projeto:
+3. Execute o projeto (escolha uma opção):
    ```bash
-   node start.js
+   # Opção mais compatível
+   node start-npm.js
+   
+   # Ou diretamente
+   npm run dev
    ```
 
 ## 🚨 Solucionando Problemas Comuns

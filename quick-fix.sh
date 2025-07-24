@@ -44,8 +44,11 @@ else
 fi
 
 echo ""
-echo "🎯 Agora tente executar:"
-echo "  node start.js"
+echo "🎯 Agora tente executar (em ordem de preferência):"
+echo "  1. node start-npm.js      (Mais compatível)"
+echo "  2. node start-simple.js   (Alternativa)"
+echo "  3. node start.js          (Original)"
+echo "  4. npm run dev            (Direto)"
 echo ""
 echo "Se ainda houver problemas com TypeScript:"
 echo "  cp tsconfig-local.json tsconfig.json"

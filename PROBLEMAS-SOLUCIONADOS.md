@@ -27,7 +27,7 @@ Baseado nos erros que você encontrou:
 ### Solução Rápida (Recomendada)
 ```bash
 bash quick-fix.sh
-node start.js
+node start-npm.js
 ```
 
 ### Se ainda houver problemas com tsconfig.json:
@@ -44,16 +44,19 @@ node start.js
 
 ## Comandos para Executar o Projeto
 
-Depois de resolver os problemas, use qualquer um destes:
+Depois de resolver os problemas, use qualquer um destes (em ordem de compatibilidade):
 ```bash
-# Opção 1 (Recomendada)
-node start.js
+# Opção 1 (Mais Compatível) ⭐
+node start-npm.js
 
-# Opção 2 (Se configurar npm start)
-npm start
-
-# Opção 3 (Comando original)
+# Opção 2 (Direto)
 npm run dev
+
+# Opção 3 (Alternativa)
+node start-simple.js
+
+# Opção 4 (Original - requer tsx)
+node start.js
 ```
 
 ## Verificação de Sucesso

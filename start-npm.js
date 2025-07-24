@@ -1,42 +1,28 @@
 #!/usr/bin/env node
 
 /**
- * Script de inicialização simples para desenvolvimento local
- * Execute com: node start.js ou npm start (se configurado)
+ * Script de inicialização usando NPM
+ * Executa o comando npm run dev diretamente
  */
 
 import { spawn } from 'child_process';
-import { dirname, join } from 'path';
+import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-console.log('🚀 Iniciando FreshTec Mobile Application...');
+console.log('🚀 Iniciando FreshTec via NPM...');
 console.log('📱 Aplicativo Passaporte do Frescor');
 console.log('');
 
-// Configurar variáveis de ambiente para desenvolvimento
+// Configurar variáveis de ambiente
 process.env.NODE_ENV = 'development';
 
-// Verificar se tsx está disponível, senão usar node com --loader
-let command, args;
-
-try {
-  // Tentar usar tsx primeiro
-  spawn.sync('tsx', ['--version'], { stdio: 'ignore' });
-  command = 'tsx';
-  args = ['server/index.ts'];
-} catch (error) {
-  // Se tsx não estiver disponível, usar node diretamente
-  console.log('⚠️  tsx não encontrado, usando node diretamente...');
-  command = 'node';
-  args = ['--loader', 'ts-node/esm', 'server/index.ts'];
-}
-
-// Executar o servidor
-const serverProcess = spawn(command, args, {
+// Executar npm run dev
+const serverProcess = spawn('npm', ['run', 'dev'], {
   cwd: __dirname,
   stdio: 'inherit',
+  shell: true,
   env: {
     ...process.env,
     NODE_ENV: 'development'
