@@ -14,7 +14,7 @@ export default function Login() {
   const [password, setPassword] = useState('');
   const [role, setRole] = useState<UserRole>('consumer');
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const { login } = useAuth();
+  const { login, loginAsGuest } = useAuth();
   const { toast } = useToast();
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -43,6 +43,24 @@ export default function Login() {
       });
     } finally {
       setIsSubmitting(false);
+    }
+  };
+
+  const handleGuestLogin = (guestRole: UserRole) => {
+    loginAsGuest(guestRole);
+    toast({
+      title: 'Entrando como convidado',
+      description: `Visualizando interface de ${getRoleDisplayName(guestRole)}`,
+    });
+  };
+
+  const getRoleDisplayName = (role: UserRole): string => {
+    switch (role) {
+      case 'producer': return 'Produtor';
+      case 'transporter': return 'Transportador';
+      case 'retailer': return 'Varejista';
+      case 'consumer': return 'Consumidor';
+      default: return '';
     }
   };
 
@@ -126,13 +144,45 @@ export default function Login() {
             </Button>
           </form>
 
-          <div className="mt-6 text-center">
-            <p className="text-sm text-gray-600">
-              Não tem uma conta?{' '}
-              <button className="text-primary hover:underline">
-                Criar conta
-              </button>
-            </p>
+          <div className="mt-6 space-y-4">
+            <div className="relative">
+              <div className="absolute inset-0 flex items-center">
+                <span className="w-full border-t" />
+              </div>
+              <div className="relative flex justify-center text-xs uppercase">
+                <span className="bg-white px-2 text-muted-foreground">Ou</span>
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <p className="text-sm text-center text-gray-600 mb-3">Entrar como convidado:</p>
+              <div className="grid grid-cols-2 gap-2">
+                {roleOptions.map((option) => {
+                  const Icon = option.icon;
+                  return (
+                    <Button
+                      key={option.value}
+                      variant="outline"
+                      size="sm"
+                      onClick={() => handleGuestLogin(option.value as UserRole)}
+                      className="flex items-center justify-center space-x-2 h-12"
+                    >
+                      <Icon className="w-4 h-4" />
+                      <span className="text-xs">{option.label}</span>
+                    </Button>
+                  );
+                })}
+              </div>
+            </div>
+
+            <div className="text-center">
+              <p className="text-sm text-gray-600">
+                Não tem uma conta?{' '}
+                <button className="text-primary hover:underline">
+                  Criar conta
+                </button>
+              </p>
+            </div>
           </div>
         </CardContent>
       </Card>

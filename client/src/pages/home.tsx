@@ -2,16 +2,54 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/contexts/AuthContext";
+import { UserRole } from "@shared/types";
 import { 
   Thermometer, Droplets, Truck, AlertTriangle, Package, 
   QrCode, Leaf, Factory, Users, BarChart3, TreePine,
-  MapPin, Calendar, Zap, CheckCircle, Home, TrendingUp, Settings
+  MapPin, Calendar, Zap, CheckCircle, Home, TrendingUp, Settings, Store
 } from "lucide-react";
 import { Link, useLocation } from 'wouter';
 
 export default function HomePage() {
-  const { user } = useAuth();
+  const { user, isGuest, loginAsGuest } = useAuth();
   const [location] = useLocation();
+
+  const RoleSwitcher = () => {
+    if (!isGuest) return null;
+
+    const roleOptions = [
+      { value: 'producer', label: 'Produtor', icon: Leaf },
+      { value: 'transporter', label: 'Transportador', icon: Truck },
+      { value: 'retailer', label: 'Varejista', icon: Store },
+      { value: 'consumer', label: 'Consumidor', icon: Users },
+    ];
+
+    return (
+      <div className="bg-amber-50 border-b border-amber-200 p-3">
+        <div className="max-w-md mx-auto">
+          <p className="text-xs text-amber-700 mb-2 text-center">Modo Convidado - Trocar visualização:</p>
+          <div className="flex justify-center space-x-1">
+            {roleOptions.map((option) => {
+              const Icon = option.icon;
+              const isActive = user?.role === option.value;
+              return (
+                <Button
+                  key={option.value}
+                  variant={isActive ? "default" : "outline"}
+                  size="sm"
+                  onClick={() => loginAsGuest(option.value as UserRole)}
+                  className={`text-xs px-2 py-1 h-8 ${isActive ? 'bg-primary text-white' : 'bg-white text-gray-600'}`}
+                >
+                  <Icon className="w-3 h-3 mr-1" />
+                  {option.label}
+                </Button>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    );
+  };
 
   const BottomNavigation = () => (
     <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 px-4 py-2 z-50">
@@ -461,6 +499,7 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <RoleSwitcher />
       {renderDashboard()}
       <BottomNavigation />
     </div>
