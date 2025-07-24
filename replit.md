@@ -1,8 +1,8 @@
-# FreshTec Mobile Application
+# FreshTec Mobile Application - Passaporte do Frescor
 
 ## Overview
 
-FreshTec is a mobile-first web application designed for inventory freshness monitoring and management. The application tracks food items, monitors temperature and humidity levels, manages delivery schedules, and provides analytics on freshness metrics. It's built as a Progressive Web App (PWA) optimized for mobile devices with a focus on inventory management in food retail or restaurant environments.
+FreshTec is a comprehensive mobile application supporting the "Passaporte do Frescor" concept, connecting the entire food supply chain from farm to table. The app serves both B2B (producers, logistics, retailers) and B2C (consumers) users with role-specific interfaces and functionalities. It integrates with smart labels (Selo de Frescor Digital) and smart containers (Pote Inteligente) to provide real-time freshness monitoring, predictive analytics, and blockchain-based traceability.
 
 ## User Preferences
 

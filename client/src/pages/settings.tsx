@@ -6,6 +6,7 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid } from "recharts";
+import { useAuth } from "@/contexts/AuthContext";
 import { 
   Bell, 
   Sprout, 
@@ -23,6 +24,7 @@ import {
 } from "lucide-react";
 
 export default function Settings() {
+  const { logout } = useAuth();
   const [notifications, setNotifications] = useState({
     freshness: true,
     temperature: false,
@@ -239,7 +241,10 @@ export default function Settings() {
             Exportar Dados
           </button>
           
-          <button className="w-full bg-red-500 text-white py-4 rounded-xl font-semibold hover:bg-red-600 transition-colors flex items-center justify-center">
+          <button 
+            onClick={logout}
+            className="w-full bg-red-500 text-white py-4 rounded-xl font-semibold hover:bg-red-600 transition-colors flex items-center justify-center"
+          >
             <LogOut className="w-5 h-5 mr-2" />
             Sair
           </button>
