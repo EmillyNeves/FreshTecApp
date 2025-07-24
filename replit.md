@@ -2,7 +2,21 @@
 
 ## Overview
 
-FreshTec is a comprehensive mobile application supporting the "Passaporte do Frescor" concept, connecting the entire food supply chain from farm to table. The app serves both B2B (producers, logistics, retailers) and B2C (consumers) users with role-specific interfaces and functionalities. It integrates with smart labels (Selo de Frescor Digital) and smart containers (Pote Inteligente) to provide real-time freshness monitoring, predictive analytics, and blockchain-based traceability.
+FreshTec is a comprehensive mobile application implementing the complete "Passaporte do Frescor" ecosystem, connecting the entire food supply chain from farm to table through digital innovation. The app serves all stakeholders (Produtor, Transportador, Varejista, Consumidor) with role-specific interfaces and functionalities. The system creates a complete information accumulation cycle through two key technologies:
+
+### Selo de Frescor Digital (Digital Freshness Seal)
+Smart QR code labels that accumulate information at each stage of the supply chain, providing complete traceability and freshness data from production to consumption.
+
+### Pote Inteligente (Smart Container)  
+IoT-enabled storage containers that monitor and optimize food preservation conditions at the consumer level, completing the information cycle and providing real-time freshness data.
+
+## Recent Changes (January 24, 2025)
+- ✅ Implemented complete Passaporte do Frescor system with expanded data types
+- ✅ Created comprehensive QR scanner with multi-tab interface (Overview, Journey, Sustainability, Blockchain)
+- ✅ Developed Smart Container management page with real-time monitoring
+- ✅ Added blockchain verification system with hash-based security
+- ✅ Integrated sustainability metrics and compliance tracking
+- ✅ Connected all components in unified information accumulation cycle
 
 ## User Preferences
 
@@ -53,10 +67,27 @@ Preferred communication style: Simple, everyday language.
 - **Icons**: Lucide React for consistent iconography
 
 ### Pages & Features
-1. **Home Dashboard**: Real-time freshness overview with status cards and alerts
+1. **Home Dashboard**: Real-time freshness overview with status cards and alerts, role-specific interfaces for all user types
 2. **Analytics**: Charts and metrics for freshness trends and inventory analysis
-3. **Calendar**: Delivery scheduling and event management
-4. **Settings**: User preferences and notification controls
+3. **Calendar**: Delivery scheduling and event management with role-specific events
+4. **Settings**: User preferences and notification controls with role-specific options
+5. **QR Scanner**: Complete Passaporte do Frescor interface with digital seal reading and blockchain verification
+6. **Smart Container**: Pote Inteligente management with real-time monitoring and intelligent storage optimization
+
+### Passaporte do Frescor (Digital Freshness Passport)
+- **Digital Seal Integration**: Complete supply chain traceability from farm to table
+- **Blockchain Verification**: Immutable record keeping with hash verification
+- **Journey Tracking**: Full visibility of production, processing, transport, storage, and retail stages
+- **Sustainability Metrics**: Carbon footprint, water usage, and packaging sustainability data
+- **Compliance Tracking**: ANVISA, organic, fair trade, and other certifications
+- **Smart Predictions**: AI-powered freshness predictions and optimal consumption dates
+
+### Pote Inteligente (Smart Container)
+- **Real-time Monitoring**: Temperature, humidity, air quality, and light sensors
+- **Intelligent Alerts**: Automatic notifications for expiration, contamination, and optimal conditions
+- **Content Management**: Track multiple food items with individual freshness levels
+- **Auto-optimization**: Automatic adjustment of storage conditions for maximum freshness
+- **Integration**: Seamless connection with Passaporte do Frescor for complete cycle tracking
 
 ## Data Flow
 

@@ -35,9 +35,73 @@ export interface Batch {
   updatedAt: Date;
 }
 
+export interface FreshnessPassport {
+  id: string;
+  qrCode: string;
+  digitalSeal: {
+    productName: string;
+    variety?: string;
+    producer: {
+      name: string;
+      location: string;
+      certifications: string[];
+    };
+    harvest: {
+      date: Date;
+      method: string;
+      weather: string;
+    };
+    treatments: Array<{
+      type: string;
+      date: Date;
+      substance?: string;
+      organic: boolean;
+    }>;
+  };
+  journey: Array<{
+    stage: 'production' | 'processing' | 'transport' | 'storage' | 'retail' | 'consumer';
+    timestamp: Date;
+    location: string;
+    handler: string;
+    conditions: {
+      temperature: number;
+      humidity: number;
+      atmosphere?: string;
+    };
+    transportMethod?: string;
+    notes?: string;
+  }>;
+  predictions: {
+    optimalConsumption: Date;
+    spoilageRisk: 'low' | 'medium' | 'high';
+    remainingShelfLife: number;
+    qualityScore: number;
+  };
+  sustainability: {
+    carbonFootprint: number;
+    waterUsage: number;
+    packaging: {
+      type: string;
+      recyclable: boolean;
+      biodegradable: boolean;
+    };
+  };
+  compliance: {
+    anvisa: boolean;
+    organic: boolean;
+    fairTrade: boolean;
+    other: string[];
+  };
+  blockchain: {
+    hash: string;
+    verified: boolean;
+    lastUpdate: Date;
+  };
+}
+
 export interface FoodItem {
   id: string;
-  batchId: string;
+  passportId: string;
   name: string;
   category: string;
   purchaseDate: Date;
@@ -46,6 +110,12 @@ export interface FoodItem {
   remainingDays: number;
   storageLocation?: string;
   consumerId: string;
+  smartContainerId?: string;
+  consumptionHistory?: Array<{
+    date: Date;
+    amount: number;
+    notes?: string;
+  }>;
 }
 
 export interface SmartContainer {
@@ -54,7 +124,28 @@ export interface SmartContainer {
   consumerId: string;
   bluetoothId: string;
   contents: FoodItem[];
+  sensors: {
+    temperature: number;
+    humidity: number;
+    airQuality: number;
+    light: number;
+  };
+  settings: {
+    optimalTemp: number;
+    optimalHumidity: number;
+    alertsEnabled: boolean;
+    autoOptimize: boolean;
+  };
+  alerts: Array<{
+    type: 'temperature' | 'humidity' | 'expiration' | 'contamination';
+    severity: 'low' | 'medium' | 'high';
+    message: string;
+    timestamp: Date;
+    resolved: boolean;
+  }>;
   lastSync: Date;
+  batteryLevel: number;
+  firmwareVersion: string;
 }
 
 export interface Alert {

@@ -6,7 +6,7 @@ import { UserRole } from "@shared/types";
 import { 
   Thermometer, Droplets, Truck, AlertTriangle, Package, 
   QrCode, Leaf, Factory, Users, BarChart3, TreePine,
-  MapPin, Calendar, Zap, CheckCircle, Home, TrendingUp, Settings, Store
+  MapPin, Calendar, Zap, CheckCircle, Home, TrendingUp, Settings, Store, Container
 } from "lucide-react";
 import { Link, useLocation } from 'wouter';
 
@@ -431,10 +431,12 @@ export default function HomePage() {
             <span className="font-medium">Escanear QR</span>
           </Button>
         </Link>
-        <Button variant="outline" className="h-24 flex flex-col items-center justify-center space-y-2 border-2 border-gray-200 hover:bg-gray-50 shadow-sm">
-          <Package className="w-8 h-8" />
-          <span className="font-medium">Pote Inteligente</span>
-        </Button>
+        <Link href="/smart-container">
+          <Button variant="outline" className="h-24 w-full flex flex-col items-center justify-center space-y-2 border-2 border-gray-200 hover:bg-gray-50 shadow-sm">
+            <Package className="w-8 h-8" />
+            <span className="font-medium">Pote Inteligente</span>
+          </Button>
+        </Link>
       </div>
 
       {/* Meus Alimentos */}

@@ -10,6 +10,7 @@ import Analytics from "@/pages/analytics";
 import CalendarPage from "@/pages/calendar";
 import Settings from "@/pages/settings";
 import QRScanner from "@/pages/qr-scanner";
+import SmartContainer from "@/pages/smart-container";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -26,6 +27,7 @@ function Router() {
       <Route path="/calendar" component={CalendarPage} />
       <Route path="/settings" component={Settings} />
       <Route path="/qr-scanner" component={QRScanner} />
+      <Route path="/smart-container" component={SmartContainer} />
       <Route component={NotFound} />
     </Switch>
   );
