@@ -109,86 +109,60 @@ export default function HomePage() {
         </Badge>
       </div>
 
-      {/* Métricas de Produção */}
-      <div className="grid grid-cols-2 gap-3">
+      {/* Métricas Essenciais - Compacto */}
+      <div className="grid grid-cols-2 gap-2">
         <Card className="border-0 shadow-sm bg-white">
-          <CardContent className="p-4">
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
-                <Package className="w-5 h-5 text-green-600" />
+          <CardContent className="p-3">
+            <div className="flex items-center space-x-2">
+              <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center">
+                <Package className="w-4 h-4 text-green-600" />
               </div>
               <div>
-                <p className="text-sm text-gray-600 font-medium">Lotes Ativos</p>
-                <p className="text-2xl font-bold text-gray-900">24</p>
+                <p className="text-xs text-gray-600 font-medium">Lotes</p>
+                <p className="text-xl font-bold text-gray-900">24</p>
               </div>
             </div>
           </CardContent>
         </Card>
         <Card className="border-0 shadow-sm bg-white">
-          <CardContent className="p-4">
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
-                <Truck className="w-5 h-5 text-blue-600" />
+          <CardContent className="p-3">
+            <div className="flex items-center space-x-2">
+              <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
+                <Truck className="w-4 h-4 text-blue-600" />
               </div>
               <div>
-                <p className="text-sm text-gray-600 font-medium">Em Transporte</p>
-                <p className="text-2xl font-bold text-gray-900">8</p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-        <Card className="border-0 shadow-sm bg-white">
-          <CardContent className="p-4">
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 rounded-full bg-yellow-100 flex items-center justify-center">
-                <TreePine className="w-5 h-5 text-yellow-600" />
-              </div>
-              <div>
-                <p className="text-sm text-gray-600 font-medium">Pegada CO2</p>
-                <p className="text-2xl font-bold text-gray-900">2.4t</p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-        <Card className="border-0 shadow-sm bg-white">
-          <CardContent className="p-4">
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center">
-                <CheckCircle className="w-5 h-5 text-purple-600" />
-              </div>
-              <div>
-                <p className="text-sm text-gray-600 font-medium">Conformidade</p>
-                <p className="text-2xl font-bold text-gray-900">98%</p>
+                <p className="text-xs text-gray-600 font-medium">Transporte</p>
+                <p className="text-xl font-bold text-gray-900">8</p>
               </div>
             </div>
           </CardContent>
         </Card>
       </div>
 
-      {/* Alertas Críticos */}
+      {/* Alertas - Simplificado */}
       <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center text-lg">
-            <AlertTriangle className="w-5 h-5 text-red-500 mr-2" />
-            Alertas Críticos
+        <CardHeader className="pb-2">
+          <CardTitle className="flex items-center text-base">
+            <AlertTriangle className="w-4 h-4 text-red-500 mr-2" />
+            Alertas
           </CardTitle>
         </CardHeader>
-        <CardContent className="space-y-3">
-          <div className="flex items-center space-x-3 p-3 bg-red-50 rounded-lg">
-            <Thermometer className="w-5 h-5 text-red-600" />
-            <div className="flex-1">
-              <h4 className="font-medium text-neutral-800">Lote #T001 - Temperatura Alta</h4>
-              <p className="text-sm text-neutral-600">Tomates - 28°C (limite: 25°C)</p>
+        <CardContent className="space-y-2">
+          <div className="flex items-center space-x-2 p-2 bg-red-50 rounded">
+            <Thermometer className="w-4 h-4 text-red-600 flex-shrink-0" />
+            <div className="flex-1 min-w-0">
+              <h4 className="font-medium text-sm text-neutral-800 truncate">Lote T001 - Temp. Alta</h4>
+              <p className="text-xs text-neutral-600">28°C (limite: 25°C)</p>
             </div>
-            <Badge variant="destructive">Alto</Badge>
+            <Badge variant="destructive" className="text-xs">Alto</Badge>
           </div>
-          <div className="flex items-center space-x-3 p-3 bg-yellow-50 rounded-lg">
-            <Package className="w-5 h-5 text-yellow-600" />
-            <div className="flex-1">
-              <h4 className="font-medium text-neutral-800">Lote #A002 - Risco de Deterioração</h4>
-              <p className="text-sm text-neutral-600">Alface - Previsão: 72h</p>
+          <div className="flex items-center space-x-2 p-2 bg-yellow-50 rounded">
+            <Package className="w-4 h-4 text-yellow-600 flex-shrink-0" />
+            <div className="flex-1 min-w-0">
+              <h4 className="font-medium text-sm text-neutral-800 truncate">Lote A002 - Risco</h4>
+              <p className="text-xs text-neutral-600">Deterioração em 72h</p>
             </div>
-            <Badge variant="secondary">Médio</Badge>
+            <Badge variant="secondary" className="text-xs">Médio</Badge>
           </div>
         </CardContent>
       </Card>
@@ -219,90 +193,60 @@ export default function HomePage() {
         </Badge>
       </div>
 
-      {/* Métricas de Transporte */}
-      <div className="grid grid-cols-2 gap-3">
+      {/* Métricas Essenciais - Compacto */}
+      <div className="grid grid-cols-2 gap-2">
         <Card className="border-0 shadow-sm bg-white">
-          <CardContent className="p-4">
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
-                <Truck className="w-5 h-5 text-blue-600" />
+          <CardContent className="p-3">
+            <div className="flex items-center space-x-2">
+              <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
+                <Truck className="w-4 h-4 text-blue-600" />
               </div>
               <div>
-                <p className="text-sm text-gray-600 font-medium">Rotas Ativas</p>
-                <p className="text-2xl font-bold text-gray-900">12</p>
+                <p className="text-xs text-gray-600 font-medium">Rotas</p>
+                <p className="text-xl font-bold text-gray-900">12</p>
               </div>
             </div>
           </CardContent>
         </Card>
         <Card className="border-0 shadow-sm bg-white">
-          <CardContent className="p-4">
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
-                <MapPin className="w-5 h-5 text-green-600" />
+          <CardContent className="p-3">
+            <div className="flex items-center space-x-2">
+              <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center">
+                <MapPin className="w-4 h-4 text-green-600" />
               </div>
               <div>
-                <p className="text-sm text-gray-600 font-medium">Entregas Hoje</p>
-                <p className="text-2xl font-bold text-gray-900">28</p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-        <Card className="border-0 shadow-sm bg-white">
-          <CardContent className="p-4">
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
-                <TreePine className="w-5 h-5 text-green-600" />
-              </div>
-              <div>
-                <p className="text-sm text-gray-600 font-medium">CO2 Economizado</p>
-                <p className="text-2xl font-bold text-gray-900">1.2t</p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-        <Card className="border-0 shadow-sm bg-white">
-          <CardContent className="p-4">
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
-                <CheckCircle className="w-5 h-5 text-green-600" />
-              </div>
-              <div>
-                <p className="text-sm text-gray-600 font-medium">Taxa Sucesso</p>
-                <p className="text-2xl font-bold text-gray-900">96%</p>
+                <p className="text-xs text-gray-600 font-medium">Entregas</p>
+                <p className="text-xl font-bold text-gray-900">28</p>
               </div>
             </div>
           </CardContent>
         </Card>
       </div>
 
-      {/* Rotas Críticas */}
+      {/* Rotas - Simplificado */}
       <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center text-lg">
-            <MapPin className="w-5 h-5 text-primary mr-2" />
+        <CardHeader className="pb-2">
+          <CardTitle className="flex items-center text-base">
+            <MapPin className="w-4 h-4 text-primary mr-2" />
             Rotas Prioritárias
           </CardTitle>
         </CardHeader>
-        <CardContent className="space-y-3">
-          <div className="flex items-center space-x-3 p-3 bg-orange-50 rounded-lg">
-            <div className="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center">
-              <Truck className="w-4 h-4 text-orange-600" />
+        <CardContent className="space-y-2">
+          <div className="flex items-center space-x-2 p-2 bg-orange-50 rounded">
+            <Truck className="w-4 h-4 text-orange-600 flex-shrink-0" />
+            <div className="flex-1 min-w-0">
+              <h4 className="font-medium text-sm text-neutral-800 truncate">SP-001</h4>
+              <p className="text-xs text-neutral-600">3 lotes perecíveis</p>
             </div>
-            <div className="flex-1">
-              <h4 className="font-medium text-neutral-800">Rota SP-001</h4>
-              <p className="text-sm text-neutral-600">São Paulo → Santos • 3 lotes perecíveis</p>
-            </div>
-            <Badge className="bg-orange-100 text-orange-800">Urgente</Badge>
+            <Badge className="bg-orange-100 text-orange-800 text-xs">Urgente</Badge>
           </div>
-          <div className="flex items-center space-x-3 p-3 bg-blue-50 rounded-lg">
-            <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
-              <Truck className="w-4 h-4 text-blue-600" />
+          <div className="flex items-center space-x-2 p-2 bg-blue-50 rounded">
+            <Truck className="w-4 h-4 text-blue-600 flex-shrink-0" />
+            <div className="flex-1 min-w-0">
+              <h4 className="font-medium text-sm text-neutral-800 truncate">RJ-003</h4>
+              <p className="text-xs text-neutral-600">5 lotes normais</p>
             </div>
-            <div className="flex-1">
-              <h4 className="font-medium text-neutral-800">Rota RJ-003</h4>
-              <p className="text-sm text-neutral-600">Rio de Janeiro → Niterói • 5 lotes</p>
-            </div>
-            <Badge className="bg-blue-100 text-blue-800">Normal</Badge>
+            <Badge className="bg-blue-100 text-blue-800 text-xs">Normal</Badge>
           </div>
         </CardContent>
       </Card>
@@ -321,90 +265,60 @@ export default function HomePage() {
         </Badge>
       </div>
 
-      {/* Métricas de Estoque */}
-      <div className="grid grid-cols-2 gap-3">
+      {/* Métricas de Estoque - Layout otimizado */}
+      <div className="grid grid-cols-2 gap-2">
         <Card className="border-0 shadow-sm bg-white">
-          <CardContent className="p-4">
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
-                <Package className="w-5 h-5 text-green-600" />
+          <CardContent className="p-3">
+            <div className="flex items-center space-x-2">
+              <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center">
+                <Package className="w-4 h-4 text-green-600" />
               </div>
               <div>
-                <p className="text-sm text-gray-600 font-medium">Itens Frescos</p>
-                <p className="text-2xl font-bold text-gray-900">847</p>
+                <p className="text-xs text-gray-600 font-medium">Frescos</p>
+                <p className="text-xl font-bold text-gray-900">847</p>
               </div>
             </div>
           </CardContent>
         </Card>
         <Card className="border-0 shadow-sm bg-white">
-          <CardContent className="p-4">
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 rounded-full bg-yellow-100 flex items-center justify-center">
-                <AlertTriangle className="w-5 h-5 text-yellow-600" />
+          <CardContent className="p-3">
+            <div className="flex items-center space-x-2">
+              <div className="w-8 h-8 rounded-full bg-yellow-100 flex items-center justify-center">
+                <AlertTriangle className="w-4 h-4 text-yellow-600" />
               </div>
               <div>
-                <p className="text-sm text-gray-600 font-medium">Próx. Vencimento</p>
-                <p className="text-2xl font-bold text-gray-900">23</p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-        <Card className="border-0 shadow-sm bg-white">
-          <CardContent className="p-4">
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center">
-                <Droplets className="w-5 h-5 text-red-600" />
-              </div>
-              <div>
-                <p className="text-sm text-gray-600 font-medium">Vencidos</p>
-                <p className="text-2xl font-bold text-gray-900">3</p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-        <Card className="border-0 shadow-sm bg-white">
-          <CardContent className="p-4">
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
-                <Truck className="w-5 h-5 text-blue-600" />
-              </div>
-              <div>
-                <p className="text-sm text-gray-600 font-medium">Em Trânsito</p>
-                <p className="text-2xl font-bold text-gray-900">156</p>
+                <p className="text-xs text-gray-600 font-medium">Vencendo</p>
+                <p className="text-xl font-bold text-gray-900">23</p>
               </div>
             </div>
           </CardContent>
         </Card>
       </div>
 
-      {/* Produtos Críticos */}
+      {/* Ações Necessárias - Compacto */}
       <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center text-lg">
-            <Zap className="w-5 h-5 text-yellow-500 mr-2" />
-            Ação Necessária
+        <CardHeader className="pb-2">
+          <CardTitle className="flex items-center text-base">
+            <Zap className="w-4 h-4 text-yellow-500 mr-2" />
+            Ações Urgentes
           </CardTitle>
         </CardHeader>
-        <CardContent className="space-y-3">
-          <div className="flex items-center space-x-3 p-3 bg-red-50 rounded-lg">
-            <div className="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center">
-              <Leaf className="w-4 h-4 text-red-600" />
+        <CardContent className="space-y-2">
+          <div className="flex items-center space-x-2 p-2 bg-red-50 rounded">
+            <Leaf className="w-4 h-4 text-red-600 flex-shrink-0" />
+            <div className="flex-1 min-w-0">
+              <h4 className="font-medium text-sm text-neutral-800 truncate">Alface Americana</h4>
+              <p className="text-xs text-neutral-600">15 un. • 1 dia</p>
             </div>
-            <div className="flex-1">
-              <h4 className="font-medium text-neutral-800">Alface Americana</h4>
-              <p className="text-sm text-neutral-600">15 unidades • Vence em 1 dia</p>
-            </div>
-            <Badge variant="destructive">Urgente</Badge>
+            <Badge variant="destructive" className="text-xs">Urgente</Badge>
           </div>
-          <div className="flex items-center space-x-3 p-3 bg-yellow-50 rounded-lg">
-            <div className="w-8 h-8 bg-yellow-100 rounded-lg flex items-center justify-center">
-              <Leaf className="w-4 h-4 text-yellow-600" />
+          <div className="flex items-center space-x-2 p-2 bg-yellow-50 rounded">
+            <Leaf className="w-4 h-4 text-yellow-600 flex-shrink-0" />
+            <div className="flex-1 min-w-0">
+              <h4 className="font-medium text-sm text-neutral-800 truncate">Tomates Cereja</h4>
+              <p className="text-xs text-neutral-600">8 un. • 2 dias</p>
             </div>
-            <div className="flex-1">
-              <h4 className="font-medium text-neutral-800">Tomates Cereja</h4>
-              <p className="text-sm text-neutral-600">8 unidades • Vence em 2 dias</p>
-            </div>
-            <Badge className="bg-yellow-100 text-yellow-800">Atenção</Badge>
+            <Badge className="bg-yellow-100 text-yellow-800 text-xs">Atenção</Badge>
           </div>
         </CardContent>
       </Card>
@@ -423,101 +337,73 @@ export default function HomePage() {
         </Badge>
       </div>
 
-      {/* Scanner QR e Pote Inteligente */}
-      <div className="grid grid-cols-2 gap-3">
+      {/* Ações Principais - Layout otimizado */}
+      <div className="grid grid-cols-2 gap-2">
         <Link href="/qr-scanner">
-          <Button className="h-24 w-full flex flex-col items-center justify-center space-y-2 bg-primary hover:bg-primary/90 shadow-md">
-            <QrCode className="w-8 h-8" />
-            <span className="font-medium">Escanear QR</span>
+          <Button className="h-20 w-full flex flex-col items-center justify-center space-y-1 bg-primary hover:bg-primary/90 shadow-sm">
+            <QrCode className="w-6 h-6" />
+            <span className="font-medium text-sm">Escanear QR</span>
           </Button>
         </Link>
         <Link href="/smart-container">
-          <Button variant="outline" className="h-24 w-full flex flex-col items-center justify-center space-y-2 border-2 border-gray-200 hover:bg-gray-50 shadow-sm">
-            <Package className="w-8 h-8" />
-            <span className="font-medium">Pote Inteligente</span>
+          <Button variant="outline" className="h-20 w-full flex flex-col items-center justify-center space-y-1 border border-gray-200 hover:bg-gray-50 shadow-sm">
+            <Package className="w-6 h-6" />
+            <span className="font-medium text-sm">Pote Inteligente</span>
           </Button>
         </Link>
       </div>
 
-      {/* Meus Alimentos */}
+      {/* Meus Alimentos - Compacto */}
       <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center text-lg">
-            <Leaf className="w-5 h-5 text-green-500 mr-2" />
+        <CardHeader className="pb-2">
+          <CardTitle className="flex items-center text-base">
+            <Leaf className="w-4 h-4 text-green-500 mr-2" />
             Meus Alimentos
           </CardTitle>
         </CardHeader>
-        <CardContent className="space-y-3">
-          <div className="flex items-center space-x-3 p-3 bg-green-50 rounded-lg">
-            <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
-              <Leaf className="w-4 h-4 text-green-600" />
+        <CardContent className="space-y-2">
+          <div className="flex items-center space-x-2 p-2 bg-green-50 rounded">
+            <div className="w-2 h-2 rounded-full bg-green-500 flex-shrink-0"></div>
+            <div className="flex-1 min-w-0">
+              <h4 className="font-medium text-sm text-neutral-800 truncate">Tomates Orgânicos</h4>
+              <p className="text-xs text-neutral-600">5 dias restantes</p>
             </div>
-            <div className="flex-1">
-              <h4 className="font-medium text-neutral-800">Tomates Orgânicos</h4>
-              <p className="text-sm text-neutral-600">Fresquinho • 5 dias restantes</p>
-            </div>
-            <div className="w-3 h-3 rounded-full bg-green-500"></div>
           </div>
-          <div className="flex items-center space-x-3 p-3 bg-yellow-50 rounded-lg">
-            <div className="w-8 h-8 bg-yellow-100 rounded-lg flex items-center justify-center">
-              <Leaf className="w-4 h-4 text-yellow-600" />
+          <div className="flex items-center space-x-2 p-2 bg-yellow-50 rounded">
+            <div className="w-2 h-2 rounded-full bg-yellow-500 flex-shrink-0"></div>
+            <div className="flex-1 min-w-0">
+              <h4 className="font-medium text-sm text-neutral-800 truncate">Alface Americana</h4>
+              <p className="text-xs text-neutral-600">2 dias restantes</p>
             </div>
-            <div className="flex-1">
-              <h4 className="font-medium text-neutral-800">Alface Americana</h4>
-              <p className="text-sm text-neutral-600">Consumir logo • 2 dias restantes</p>
-            </div>
-            <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
           </div>
-          <div className="flex items-center space-x-3 p-3 bg-red-50 rounded-lg">
-            <div className="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center">
-              <Leaf className="w-4 h-4 text-red-600" />
-            </div>
-            <div className="flex-1">
-              <h4 className="font-medium text-neutral-800">Bananas</h4>
-              <p className="text-sm text-neutral-600">Consumir hoje • 1 dia restante</p>
-            </div>
-            <div className="w-3 h-3 rounded-full bg-red-500"></div>
-          </div>
-        </CardContent>
-      </Card>
-
-      {/* Impacto Ambiental */}
-      <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center text-lg">
-            <TreePine className="w-5 h-5 text-green-500 mr-2" />
-            Seu Impacto
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid grid-cols-2 gap-4">
-            <div className="text-center">
-              <p className="text-2xl font-bold text-green-600">2.4kg</p>
-              <p className="text-sm text-neutral-600">Desperdício evitado</p>
-            </div>
-            <div className="text-center">
-              <p className="text-2xl font-bold text-blue-600">1.8kg</p>
-              <p className="text-sm text-neutral-600">CO2 economizado</p>
+          <div className="flex items-center space-x-2 p-2 bg-red-50 rounded">
+            <div className="w-2 h-2 rounded-full bg-red-500 flex-shrink-0"></div>
+            <div className="flex-1 min-w-0">
+              <h4 className="font-medium text-sm text-neutral-800 truncate">Bananas</h4>
+              <p className="text-xs text-neutral-600">1 dia restante</p>
             </div>
           </div>
         </CardContent>
       </Card>
 
-      {/* Compartilhamento Comunitário */}
+      {/* Impacto Sustentável - Simplificado */}
       <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center text-lg">
-            <Users className="w-5 h-5 text-purple-500 mr-2" />
-            Compartilhamento
+        <CardHeader className="pb-2">
+          <CardTitle className="flex items-center text-base">
+            <TreePine className="w-4 h-4 text-green-500 mr-2" />
+            Impacto Sustentável
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="flex items-center justify-between p-3 bg-purple-50 rounded-lg">
-            <div>
-              <h4 className="font-medium text-neutral-800">Pontos de Doação</h4>
-              <p className="text-sm text-neutral-600">3 locais próximos disponíveis</p>
+          <div className="grid grid-cols-2 gap-3">
+            <div className="text-center p-2 bg-green-50 rounded">
+              <p className="text-lg font-bold text-green-600">2.4kg</p>
+              <p className="text-xs text-neutral-600">Desperdício evitado</p>
             </div>
-            <Button size="sm" variant="outline">Ver Mapa</Button>
+            <div className="text-center p-2 bg-blue-50 rounded">
+              <p className="text-lg font-bold text-blue-600">1.8kg</p>
+              <p className="text-xs text-neutral-600">CO2 economizado</p>
+            </div>
           </div>
         </CardContent>
       </Card>

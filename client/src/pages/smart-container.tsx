@@ -332,56 +332,52 @@ export default function SmartContainer() {
             <p className="text-gray-600">Monitore e otimize o armazenamento dos seus alimentos</p>
           </div>
 
-          {/* Status Geral */}
-          <div className="grid grid-cols-2 gap-3">
+          {/* Status Geral - Compacto */}
+          <div className="grid grid-cols-2 gap-2">
             <Card className="border-0 shadow-sm bg-white">
-              <CardContent className="p-4 text-center">
-                <div className="w-10 h-10 bg-blue-100 rounded-full mx-auto mb-2 flex items-center justify-center">
-                  <Container className="w-5 h-5 text-blue-600" />
+              <CardContent className="p-3 text-center">
+                <div className="w-8 h-8 bg-blue-100 rounded-full mx-auto mb-1 flex items-center justify-center">
+                  <Container className="w-4 h-4 text-blue-600" />
                 </div>
-                <p className="text-sm text-gray-600">Potes Conectados</p>
-                <p className="text-2xl font-bold text-gray-900">{smartContainers.length}</p>
+                <p className="text-xs text-gray-600">Conectados</p>
+                <p className="text-xl font-bold text-gray-900">{smartContainers.length}</p>
               </CardContent>
             </Card>
             <Card className="border-0 shadow-sm bg-white">
-              <CardContent className="p-4 text-center">
-                <div className="w-10 h-10 bg-green-100 rounded-full mx-auto mb-2 flex items-center justify-center">
-                  <Package className="w-5 h-5 text-green-600" />
+              <CardContent className="p-3 text-center">
+                <div className="w-8 h-8 bg-green-100 rounded-full mx-auto mb-1 flex items-center justify-center">
+                  <Package className="w-4 h-4 text-green-600" />
                 </div>
-                <p className="text-sm text-gray-600">Itens Monitorados</p>
-                <p className="text-2xl font-bold text-gray-900">
+                <p className="text-xs text-gray-600">Itens</p>
+                <p className="text-xl font-bold text-gray-900">
                   {smartContainers.reduce((total, container) => total + container.contents.length, 0)}
                 </p>
               </CardContent>
             </Card>
           </div>
 
-          {/* Lista de Potes */}
-          <div className="space-y-4">
+          {/* Lista de Potes - Layout otimizado */}
+          <div className="space-y-3">
             {smartContainers.map((container) => (
               <Card key={container.id} className="border-0 shadow-sm bg-white">
-                <CardContent className="p-4">
-                  <div className="flex items-center justify-between mb-3">
-                    <div className="flex items-center space-x-3">
-                      <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
-                        <Container className="w-6 h-6 text-blue-600" />
+                <CardContent className="p-3">
+                  <div className="flex items-center justify-between mb-2">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                        <Container className="w-5 h-5 text-blue-600" />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-gray-800">{container.name}</h3>
-                        <p className="text-sm text-gray-600">{container.contents.length} itens</p>
+                        <h3 className="font-semibold text-sm text-gray-800">{container.name}</h3>
+                        <p className="text-xs text-gray-600">{container.contents.length} itens</p>
                       </div>
                     </div>
-                    <div className="flex items-center space-x-2">
+                    <div className="flex items-center space-x-1">
                       {container.alerts.length > 0 && (
-                        <AlertTriangle className="w-5 h-5 text-yellow-500" />
+                        <AlertTriangle className="w-4 h-4 text-yellow-500" />
                       )}
                       <div className="text-right">
                         <div className="flex items-center space-x-1">
-                          <Wifi className="w-4 h-4 text-green-500" />
-                          <span className="text-xs text-green-600">Online</span>
-                        </div>
-                        <div className="flex items-center space-x-1">
-                          <Zap className={`w-4 h-4 ${getBatteryColor(container.batteryLevel)}`} />
+                          <Zap className={`w-3 h-3 ${getBatteryColor(container.batteryLevel)}`} />
                           <span className={`text-xs ${getBatteryColor(container.batteryLevel)}`}>
                             {container.batteryLevel}%
                           </span>
@@ -390,19 +386,16 @@ export default function SmartContainer() {
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-3 gap-3 mb-3">
-                    <div className="text-center p-2 bg-blue-50 rounded-lg">
-                      <Thermometer className="w-4 h-4 text-blue-600 mx-auto mb-1" />
+                  <div className="grid grid-cols-3 gap-2 mb-2">
+                    <div className="text-center p-1.5 bg-blue-50 rounded">
                       <p className="text-xs text-gray-600">Temp</p>
                       <p className="text-sm font-bold text-blue-600">{container.sensors.temperature}°C</p>
                     </div>
-                    <div className="text-center p-2 bg-green-50 rounded-lg">
-                      <Droplets className="w-4 h-4 text-green-600 mx-auto mb-1" />
+                    <div className="text-center p-1.5 bg-green-50 rounded">
                       <p className="text-xs text-gray-600">Umidade</p>
                       <p className="text-sm font-bold text-green-600">{container.sensors.humidity}%</p>
                     </div>
-                    <div className="text-center p-2 bg-purple-50 rounded-lg">
-                      <CheckCircle className="w-4 h-4 text-purple-600 mx-auto mb-1" />
+                    <div className="text-center p-1.5 bg-purple-50 rounded">
                       <p className="text-xs text-gray-600">Qualidade</p>
                       <p className="text-sm font-bold text-purple-600">{container.sensors.airQuality}%</p>
                     </div>
@@ -410,7 +403,8 @@ export default function SmartContainer() {
 
                   <Button 
                     variant="outline" 
-                    className="w-full"
+                    size="sm"
+                    className="w-full text-xs"
                     onClick={() => setSelectedContainer(container.id)}
                   >
                     Ver Detalhes
@@ -420,20 +414,20 @@ export default function SmartContainer() {
             ))}
           </div>
 
-          {/* Ações Rápidas */}
+          {/* Ações Rápidas - Compacto */}
           <Card className="border-0 shadow-sm bg-white">
-            <CardHeader>
-              <CardTitle className="text-lg font-semibold text-gray-900">Ações Rápidas</CardTitle>
+            <CardHeader className="pb-2">
+              <CardTitle className="text-base font-semibold text-gray-900">Ações</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="grid grid-cols-2 gap-3">
-                <Button className="h-16 flex flex-col items-center justify-center space-y-1 bg-blue-600 hover:bg-blue-700">
-                  <Bluetooth className="w-5 h-5" />
-                  <span className="text-sm">Conectar Pote</span>
+              <div className="grid grid-cols-2 gap-2">
+                <Button className="h-12 flex flex-col items-center justify-center space-y-0.5 bg-blue-600 hover:bg-blue-700">
+                  <Bluetooth className="w-4 h-4" />
+                  <span className="text-xs">Conectar</span>
                 </Button>
-                <Button variant="outline" className="h-16 flex flex-col items-center justify-center space-y-1">
-                  <Settings className="w-5 h-5" />
-                  <span className="text-sm">Configurações</span>
+                <Button variant="outline" className="h-12 flex flex-col items-center justify-center space-y-0.5">
+                  <Settings className="w-4 h-4" />
+                  <span className="text-xs">Config</span>
                 </Button>
               </div>
             </CardContent>
