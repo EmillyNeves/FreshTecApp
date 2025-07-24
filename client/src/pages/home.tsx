@@ -539,9 +539,11 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <RoleSwitcher />
-      {renderDashboard()}
-      <BottomNavigation />
+      <div className="mobile-container">
+        <RoleSwitcher />
+        {renderDashboard()}
+        <BottomNavigation />
+      </div>
     </div>
   );
 }

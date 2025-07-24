@@ -64,10 +64,19 @@
 }
 
 .mobile-container {
-  max-width: 375px;
+  max-width: 430px;
   margin: 0 auto;
   min-height: 100vh;
-  background: linear-gradient(135deg, hsl(210, 40%, 98%) 0%, hsl(210, 40%, 91%) 100%);
+  width: 100%;
+  position: relative;
+  background: white;
+}
+
+@media (max-width: 480px) {
+  .mobile-container {
+    max-width: 100%;
+    padding: 0;
+  }
 }
 
 .notification-badge {
