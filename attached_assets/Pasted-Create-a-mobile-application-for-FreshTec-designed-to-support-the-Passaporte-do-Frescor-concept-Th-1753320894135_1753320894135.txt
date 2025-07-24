@@ -1,0 +1,144 @@
+Create a mobile application for FreshTec designed to support the "Passaporte do Frescor" concept. The app must enable both B2B (producers, logistics, retailers) and B2C (consumers) functionalities, connecting the food supply chain from farm to table. The app should have a modern, intuitive, and visually appealing design, prioritizing usability, accessibility, and low-cost integration for small and medium-sized enterprises (SMEs) in Brazil. Use React Native for cross-platform compatibility (iOS and Android) and Tailwind CSS for styling. Below are the updated requirements for the app's screens and functionalities, including additional monitoring and data features to enhance the scope.
+
+---
+
+### General Requirements
+
+- **Platform**: React Native, ensuring compatibility with iOS and Android.
+- **Design**: Clean, modern, and intuitive UI/UX using Tailwind CSS. Use a color palette inspired by freshness (greens, whites, soft blues) with high contrast for accessibility. Ensure responsive layouts for various screen sizes.
+- **Language**: Portuguese (Brazil) as the primary language, with clear and concise text.
+- **Offline Capability**: Basic functionalities (e.g., viewing cached data, scanning QR codes) should work offline, syncing when connectivity is restored.
+- **Security**: Implement secure authentication (email/password or OAuth) and data encryption for sensitive information (e.g., supply chain data).
+- **Performance**: Optimize for low-resource devices to ensure accessibility for SMEs and consumers in Brazil.
+
+---
+
+### App Functionalities
+
+1. **B2B Features (Producers, Logistics, Retailers)**:
+
+   - **Selo de Frescor Digital Integration**: Allow users to monitor data from smart labels (temperature, humidity, gas sensors) attached to food crates or pallets.
+   - **Real-Time Monitoring**: Display real-time data (temperature, humidity, location) for each tracked batch, with alerts for anomalies (e.g., temperature deviation).
+   - **Batch Traceability**: Provide a detailed history of each batch (origin, transport conditions, storage conditions) for transparency and quality assurance.
+   - **Analytics Dashboard**: Offer insights (e.g., loss trends, transport efficiency) for producers and retailers to optimize operations.
+   - **Alert System**: Push notifications and in-app alerts for critical events (e.g., refrigeration failure).
+   - **New: Predictive Analytics for Spoilage**: Use machine learning models to predict potential spoilage risks based on historical sensor data (e.g., temperature fluctuations, transit time) and suggest proactive measures (e.g., rerouting to closer markets).
+   - **New: Carbon Footprint Tracking**: Calculate and display the carbon footprint of each batch based on transport distance, refrigeration energy use, and spoilage rates, enabling producers and retailers to optimize for sustainability.
+   - **New: Compliance Reporting**: Generate automated reports for regulatory compliance (e.g., ANVISA standards in Brazil) based on sensor data, ensuring producers and retailers can provide proof of adherence to food safety regulations.
+
+2. **B2C Features (Consumers)**:
+
+   - **QR Code Scanning**: Enable scanning of QR codes on Selo de Frescor Digital labels to access a food item’s freshness history (origin, transport, storage conditions).
+   - **Pote Inteligente Integration**: Allow consumers to pair the app with a smart container (Pote Inteligente) via Bluetooth or QR code to monitor stored food freshness.
+   - **Freshness Estimation**: Use algorithms to estimate the remaining shelf life of food items based on sensor data and display notifications (e.g., “Consuma seus tomates nos próximos 2 dias!”).
+   - **Visual Freshness Indicator**: Show a visual status (e.g., green/yellow/red) for each food item’s freshness in the app.
+   - **Meal Planning**: Suggest recipes or consumption priorities based on food items’ freshness data to reduce waste.
+   - **Waste Tracking**: Provide a simple dashboard showing the user’s waste reduction progress (e.g., “Você evitou 2 kg de desperdício este mês!”).
+   - **New: Environmental Impact Insights**: Display the environmental impact of reduced waste (e.g., “Você economizou 5 kg de CO2 este mês!”) based on food saved from spoilage.
+   - **New: Community Sharing Feature**: Allow consumers to donate near-expiry food to local charities or food banks via the app, with integration to nearby donation points and notifications when food is nearing its shelf life.
+   - **New: Storage Optimization Tips**: Provide tailored suggestions for optimal storage conditions (e.g., “Armazene suas maçãs na geladeira a 0-4°C para maior durabilidade”) based on food type and sensor data.
+
+3. **Shared Features**:
+
+   - **Passaporte do Frescor**: Create a unified data trail connecting B2B and B2C, showing the food’s journey (farm → transport → retail → consumer).
+   - **Cloud Sync**: Store data in a secure cloud platform, accessible across B2B and B2C users, with real-time updates.
+   - **User Roles**: Support different user types (Producer, Transporter, Retailer, Consumer) with role-specific dashboards and permissions.
+   - **New: Blockchain-Based Data Integrity**: Implement a blockchain layer to ensure the immutability and trustworthiness of the “Passaporte do Frescor” data, providing a verifiable record of the food’s journey for all stakeholders.
+
+---
+
+### App Screens
+
+1. **Login/Sign-Up Screen**:
+
+   - Fields for email/password or OAuth (Google, Apple).
+   - Option to select user type (Producer, Transporter, Retailer, Consumer).
+   - Minimalist design with a prominent “FreshTec” logo and a fresh, green-themed background.
+
+2. **Home Dashboard (Role-Specific)**:
+
+   - **B2B (Producer/Transporter/Retailer)**:
+     - Overview of active batches with real-time metrics (temperature, humidity, location).
+     - Alerts section for critical issues (e.g., “Batch #123: Temperature above safe range”).
+     - Quick access to analytics, batch history, predictive spoilage insights, carbon footprint data, and compliance reports.
+   - **B2C (Consumer)**:
+     - List of scanned food items with freshness indicators (green/yellow/red).
+     - Notifications for expiring items (e.g., “Tomates: 2 dias restantes”).
+     - Quick access to QR code scanner, meal planning tools, waste reduction stats, environmental impact insights, and community sharing options.
+   - Design: Card-based layout with Tailwind CSS, using soft shadows and rounded corners for a modern look.
+
+3. **Batch/Product Details Screen**:
+
+   - **B2B**: Detailed view of a batch (e.g., origin, transport timeline, sensor data graphs, alerts history, predictive spoilage risks, carbon footprint, compliance report download).
+   - **B2C**: Food item details (e.g., origin, freshness history, estimated shelf life, recipe suggestions, storage tips, donation options).
+   - Design: Clean graphs for sensor data, a timeline for the “Passaporte do Frescor,” and a prominent freshness indicator.
+
+4. **QR Code Scanner Screen**:
+
+   - Camera-based QR code scanner to retrieve data from Selo de Frescor Digital labels.
+   - Offline caching of scanned data for later syncing.
+   - Design: Full-screen camera view with a centered scanning frame and clear instructions (“Aponte para o QR code do alimento”).
+
+5. **Pote Inteligente Management Screen (B2C)**:
+
+   - List of paired smart containers with their contents and freshness status.
+   - Option to manually add items or sync via QR code.
+   - Notifications for expiring items in each container and storage optimization tips.
+   - Design: Grid layout showing containers as cards with visual freshness indicators.
+
+6. **Analytics/Waste Reduction Screen**:
+
+   - **B2B**: Graphs and metrics on batch performance, losses, transport efficiency, predictive spoilage risks, and carbon footprint.
+   - **B2C**: Consumer waste reduction stats, environmental impact insights, and tips for minimizing waste.
+   - Design: Interactive charts (using a library like Recharts) with a clean, white background and green accents.
+
+7. **Community Sharing Screen (B2C)**:
+
+   - List of near-expiry food items with options to donate to local charities or food banks.
+   - Integration with maps to show nearby donation points.
+   - Design: Simple list view with a map component and a “Donate Now” button.
+
+8. **Settings Screen**:
+
+   - Options to manage user profile, notifications, language, app theme, and blockchain data preferences.
+   - Toggle for offline mode and data sync preferences.
+   - Design: Simple list-based layout with Tailwind CSS for consistent styling.
+
+---
+
+### Technical Requirements
+
+- **Frontend**: React Native with Tailwind CSS for styling. Use components like `react-native-camera` for QR code scanning and `react-native-ble-plx` for Bluetooth (Pote Inteligente).
+- **Backend Integration**: Connect to a cloud-based API (e.g., REST or GraphQL) for real-time sensor data, batch tracking, and blockchain data storage. Assume a secure API endpoint is provided for fetching/storing data.
+- **Database**: Use a cloud database (e.g., Firebase or AWS DynamoDB) for storing batch and user data, with offline caching via AsyncStorage in React Native.
+- **Blockchain**: Integrate a lightweight blockchain solution (e.g., Hyperledger or Ethereum-based) for immutable “Passaporte do Frescor” data, ensuring transparency and trust.
+- **Libraries**:
+  - `react-native-camera` for QR code scanning.
+  - `react-native-ble-plx` for Bluetooth connectivity.
+  - `recharts` for data visualization.
+  - `axios` for API calls.
+  - `react-native-async-storage` for offline caching.
+  - `ethers.js` or similar for blockchain integration.
+- **Push Notifications**: Implement Firebase Cloud Messaging (FCM) for alerts (e.g., expiring food, temperature anomalies, donation reminders).
+- **Machine Learning**: Use a lightweight ML model (e.g., TensorFlow.js) for predictive spoilage analytics, deployable on the backend or locally for offline use.
+- **Accessibility**: Ensure WCAG 2.1 compliance (e.g., high-contrast text, screen reader support).
+
+---
+
+### Deliverables
+
+- A fully functional React Native application with the above screens and functionalities.
+- Source code structured with reusable components, following React Native best practices.
+- A README file with setup instructions and dependencies.
+- Mockups or screenshots of each screen to demonstrate the design.
+
+---
+
+### Success Criteria
+
+- The app must provide a seamless experience for both B2B and B2C users, with role-specific dashboards.
+- The UI/UX should be intuitive, visually appealing, and aligned with the “freshness” theme.
+- The app should handle real-time data syncing, offline capabilities, and blockchain integration effectively.
+- The “Passaporte do Frescor” concept must be clearly represented, connecting farm-to-table data transparently with added value from predictive analytics, carbon tracking, compliance reporting, and community sharing.
+
+Please provide the complete source code for the React Native application, including all necessary files (e.g., App.js, components, styles), and ensure it can be run on iOS and Android devices with minimal setup.

@@ -79,6 +79,19 @@
   }
 }
 
+/* Corrigir navegação inferior */
+.bottom-nav {
+  max-width: 430px;
+}
+
+@media (max-width: 480px) {
+  .bottom-nav {
+    max-width: 100%;
+    left: 0;
+    right: 0;
+  }
+}
+
 .notification-badge {
   animation: pulse 2s infinite;
 }
