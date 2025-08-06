@@ -36,9 +36,28 @@ app.use((req, res, next) => {
   next();
 });
 
+// Register API routes first, before any middleware
+app.get("/api/health", (_req, res) => {
+  res.json({ 
+    status: "ok", 
+    timestamp: new Date().toISOString(),
+    service: "freshtec-mobile"
+  });
+});
+
+app.get("/api", (_req, res) => {
+  res.json({ 
+    name: "FreshTec Mobile API",
+    version: "1.0.0",
+    description: "API for Passaporte do Frescor system"
+  });
+});
+
 (async () => {
+  // Create HTTP server
   const server = await registerRoutes(app);
 
+  // Error handling middleware
   app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
     const status = err.status || err.statusCode || 500;
     const message = err.message || "Internal Server Error";
@@ -47,9 +66,8 @@ app.use((req, res, next) => {
     throw err;
   });
 
-  // importantly only setup vite in development and after
-  // setting up all the other routes so the catch-all route
-  // doesn't interfere with the other routes
+  // Setup Vite or static serving AFTER API routes
+  // This ensures API routes are handled before the catch-all
   if (app.get("env") === "development") {
     await setupVite(app, server);
   } else {
@@ -60,7 +78,7 @@ app.use((req, res, next) => {
   // Other ports are firewalled. Default to 5000 if not specified.
   // this serves both the API and the client.
   // It is the only port that is not firewalled.
-  const port = parseInt(process.env.PORT || '80', 10);
+  const port = parseInt(process.env.PORT || '5000', 10);
   server.listen({
     port,
     host: "0.0.0.0",
