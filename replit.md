@@ -10,7 +10,7 @@ Smart QR code labels that accumulate information at each stage of the supply cha
 ### Pote Inteligente (Smart Container)  
 IoT-enabled storage containers that monitor and optimize food preservation conditions at the consumer level, completing the information cycle and providing real-time freshness data.
 
-## Recent Changes (January 24, 2025)
+## Recent Changes (January 06, 2025)
 - ✅ Implemented complete Passaporte do Frescor system with expanded data types
 - ✅ Created comprehensive QR scanner with multi-tab interface (Overview, Journey, Sustainability, Blockchain)
 - ✅ Developed Smart Container management page with real-time monitoring
@@ -21,6 +21,9 @@ IoT-enabled storage containers that monitor and optimize food preservation condi
 - ✅ Simplified user interfaces by removing unnecessary functionalities for each user type
 - ✅ Created compact layouts with smaller cards and efficient space usage
 - ✅ Configured local development setup with simple `npm start` command
+- ✅ **NEW**: Complete deployment setup for Vercel, Netlify, and Docker
+- ✅ **NEW**: Production-ready build system with optimized scripts
+- ✅ **NEW**: Local development environment with multiple start options
 
 ## User Preferences
 
@@ -156,9 +159,24 @@ Preferred communication style: Simple, everyday language.
 
 ### Local Development Setup
 - **Simple Start**: `node start.js` or `npm start` (if configured locally)
-- **Setup Script**: `bash local-setup.sh` for automated local configuration
+- **Setup Script**: `node scripts/setup-local.js` for automated local configuration
 - **Documentation**: `README-LOCAL.md` with complete local setup instructions
-- **Local Package**: `package-local-example.json` template for custom npm scripts
+- **Local Package**: `package-local.json` template for custom npm scripts
 - **Port**: Application runs on http://localhost:5000 in development mode
+
+### Deployment & Production
+- **Build System**: Optimized build scripts for different platforms
+- **Vercel Deploy**: `node scripts/deploy-vercel.js` - One-command deployment to Vercel
+- **Netlify Deploy**: `npm run deploy:netlify` - Automated Netlify deployment
+- **Docker Support**: Complete containerization with `Dockerfile` and `.dockerignore`
+- **Production Server**: `node start-production.js` - Local production testing
+- **Build Testing**: `node scripts/test-build.js` - Verify build integrity
+- **Documentation**: `README-DEPLOY.md` with comprehensive deployment guide
+
+### Supported Platforms
+- **Vercel** (Recommended): Full serverless deployment with optimized configuration
+- **Netlify**: Serverless functions with static site generation
+- **Docker**: Containerized deployment for any cloud provider
+- **Traditional Servers**: PM2 process management with Nginx proxy
 
 The architecture prioritizes mobile user experience, developer productivity, and type safety while maintaining clear separation between client and server concerns. The use of modern tools like Drizzle ORM, TanStack Query, and Shadcn/ui provides a solid foundation for building and maintaining the freshness monitoring application.

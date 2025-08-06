@@ -1,0 +1,20 @@
+{
+  "name": "freshtec-mobile-deploy",
+  "version": "1.0.0",
+  "description": "Deploy scripts and configurations for FreshTec Mobile",
+  "type": "module",
+  "scripts": {
+    "build:vercel": "node scripts/build-vercel.js",
+    "build:netlify": "node scripts/build-netlify.js", 
+    "deploy:vercel": "node scripts/deploy-vercel.js",
+    "deploy:netlify": "npm run build:netlify && netlify deploy --prod",
+    "docker:build": "docker build -t freshtec-mobile .",
+    "docker:run": "docker run -p 5000:5000 freshtec-mobile",
+    "install:deploy-tools": "npm install -g vercel netlify-cli",
+    "setup:vercel": "vercel login && vercel link",
+    "setup:netlify": "netlify login && netlify init"
+  },
+  "keywords": ["freshtec", "mobile", "deploy", "vercel", "netlify"],
+  "author": "FreshTec Team",
+  "license": "MIT"
+}
